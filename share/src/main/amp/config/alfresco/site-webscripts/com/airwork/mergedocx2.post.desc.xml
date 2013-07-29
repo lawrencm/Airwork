@@ -1,0 +1,9 @@
+<webscript>
+  <shortname>mergedocx2</shortname>
+  <description>MergeDocx2 files together</description>
+  <url>/airwork/mergedocx?nodeRef={nodeRef}</url>
+  <format default="json">argument</format>
+  <authentication>user</authentication>
+  <transaction>required</transaction>
+  <lifecycle>internal</lifecycle>
+</webscript>

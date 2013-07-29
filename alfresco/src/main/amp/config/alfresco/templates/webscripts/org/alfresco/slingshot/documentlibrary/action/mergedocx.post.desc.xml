@@ -1,0 +1,9 @@
+<webscript>
+  <shortname>mergedocx</shortname>
+  <description>MergeDocx files together</description>
+  <url>/slingshot/doclib/action/mergedocx?nodeRef={nodeRef}</url>
+  <format default="json">argument</format>
+  <authentication>user</authentication>
+  <transaction>required</transaction>
+  <lifecycle>internal</lifecycle>
+</webscript>

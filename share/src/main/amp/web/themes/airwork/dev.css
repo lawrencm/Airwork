@@ -1,0 +1,1670 @@
+@import url(css/fontello.css);
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,300,500);
+/* line 12, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/mixins.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/mixins\.less}line{font-family:\0000312}}
+.clearfix {
+  *zoom: 1;
+}
+/* line 14, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/mixins.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/mixins\.less}line{font-family:\0000314}}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+/* line 22, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/mixins.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/mixins\.less}line{font-family:\0000322}}
+.clearfix:after {
+  clear: both;
+}
+/* line 106, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/mixins.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/mixins\.less}line{font-family:\00003106}}
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+/* line 154, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/mixins.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/mixins\.less}line{font-family:\00003154}}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 22, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\0000322}}
+body {
+  background: #eeeff2;
+  font-family: 'Roboto', Helvetica, sans-serif;
+  /*padding:10px;*/
+
+}
+/* Site-wide Styles */
+/* line 30, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\0000330}}
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+  border: none;
+}
+/* line 38, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\0000338}}
+button:focus {
+  outline: none;
+}
+/* line 40, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\0000340}}
+.yui-overlay,
+.sticky-wrapper,
+.sticky-footer {
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-size: 81%;
+  color: #333333;
+}
+/* line 49, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\0000349}}
+.sticky-wrapper a,
+.sticky-wrapper a:visited,
+.sticky-wrapper a:hover,
+.sticky-footer a,
+.sticky-footer a:visited,
+.sticky-footer a:hover,
+.yui-overlay a,
+.yui-overlay a:visited,
+.yui-overlay a:hover {
+  color: #333333;
+  text-decoration: none;
+}
+/* line 63, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\0000363}}
+.sticky-wrapper a:hover,
+.yui-overlay a:hover,
+.sticky-footer a:hover {
+  text-decoration: underline;
+}
+/* line 70, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\0000370}}
+.page-title {
+  line-height: 64px;
+  padding: 0 20px;
+}
+/* line 75, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\0000375}}
+.sticky-wrapper h1,
+.yui-overlay h1 {
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+}
+/* line 83, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\0000383}}
+.sticky-wrapper h2,
+.yui-overlay h2 {
+  font-size: 123.1%;
+}
+/* line 89, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\0000389}}
+h2.thin {
+  font-weight: normal;
+}
+/* line 94, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\0000394}}
+h1 .light,
+h1 .lighter,
+h2 .light,
+h2 .lighter {
+  color: #c7dbeb;
+}
+/* line 102, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003102}}
+.sticky-wrapper h3,
+.yui-overlay h3 {
+  font-size: 108%;
+}
+/* line 108, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003108}}
+.sticky-wrapper h4,
+.yui-overlay h4 {
+  font-weight: bold;
+}
+/* line 114, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003114}}
+h3 .light,
+h3 .lighter,
+h4 .light,
+h4 .lighter {
+  color: #a2a2a2;
+}
+/* line 122, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003122}}
+.sticky-wrapper hr,
+.yui-overlay hr {
+  color: #E4E4E4;
+  background-color: #E4E4E4;
+}
+/* line 129, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003129}}
+.sticky-wrapper label,
+.share-form .viewmode-label {
+  color: #606060;
+  margin-right: 0.4em;
+}
+/* line 136, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003136}}
+.alfresco-share .sticky-wrapper {
+  /*background-color: #fff;*/
+
+  background-color: #eeeff2;
+}
+/* line 142, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003142}}
+.label {
+  font-weight: bold;
+}
+/* line 147, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003147}}
+.error {
+  color: red;
+}
+/* line 152, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003152}}
+.alfresco-share .sticky-wrapper .error {
+  background: white !important;
+  color: red !important;
+  font-weight: bold;
+  padding: 0.2em 1em;
+}
+/* line 160, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003160}}
+.alfresco-share .sticky-wrapper .error-alt {
+  background-color: red !important;
+  color: white !important;
+  font-weight: bold;
+  padding: 0.2em 1em;
+}
+/* line 168, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003168}}
+.light {
+  font-weight: normal;
+}
+/* line 173, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003173}}
+.lighter {
+  font-size: 93%;
+  font-weight: normal;
+}
+/* line 179, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003179}}
+.faded {
+  color: #aaa;
+}
+/* HEADER and FOOTER */
+/* line 186, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003186}}
+#doc3 {
+  margin: 0;
+}
+/* line 190, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003190}}
+#alf-hd {
+  background: #43484d;
+  padding: 0px 0px;
+}
+/* line 196, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003196}}
+.yui-skin-airwork .header .menu-wrapper {
+  background-color: #F9F9F9;
+}
+/* line 201, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003201}}
+.yui-skin-airwork .header .logo-wrapper {
+  border-right: 1px solid #E3E3E3;
+}
+/* line 206, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003206}}
+.yui-skin-airwork .footer {
+  background-color: #F9F9F9;
+  border-color-top: #E3E3E3;
+}
+/* DASHLETS */
+/* line 214, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003214}}
+.dashlet {
+  /*border: 1px solid #dddddd;*/
+
+  background-color: transparent;
+}
+/* line 218, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003218}}
+.dashlet .body {
+  background-color: #fff;
+  -webkit-border-radius: 0px 0px 4px 4px;
+  -moz-border-radius: 0px 0px 4px 4px;
+  border-radius: 0px 0px 4px 4px;
+}
+/* line 223, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003223}}
+.dashlet .title {
+  background-color: #eeeff2;
+  color: #484e54;
+  font-size: 18px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  padding-left: 0;
+}
+/* line 232, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003232}}
+.dashlet div.toolbar {
+  -webkit-border-radius: 4px 4px 0px 0px;
+  -moz-border-radius: 4px 4px 0px 0px;
+  border-radius: 4px 4px 0px 0px;
+  padding-top: 4px;
+  height: 50px;
+  background-color: #43484d;
+  border-bottom: 1px solid #333333;
+  color: white;
+  font-size: 17.5px;
+}
+/* line 243, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003243}}
+.dashlet div.toolbar .yui-menu-button .first-child {
+  border: none;
+}
+/* line 246, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003246}}
+.dashlet div.toolbar .yui-menu-button button {
+  background-color: transparent;
+  color: white;
+  padding: 8px 20px;
+}
+/* line 253, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003253}}
+.dashlet div.toolbar.flat-button span.yui-button-hover {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  line-height: 1.5em;
+  background: #1ac09d !important;
+  border: none;
+  color: white;
+}
+/* line 263, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003263}}
+.dashlet .feed {
+  background: red;
+  background-repeat: no-repeat;
+}
+/* line 270, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003270}}
+.dashlet .titleBarActions .help:before {
+  content: '\e801';
+}
+/* line 273, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003273}}
+.dashlet .titleBarActions .rss:before {
+  content: '\e802';
+}
+/* line 276, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003276}}
+.dashlet .titleBarActions .edit:before {
+  content: '\e800';
+}
+/* line 281, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003281}}
+.titleBarActionIcon,
+.item-social {
+  background-image: none !important;
+  color: #333333;
+}
+/* line 288, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003288}}
+.item-social a.comment {
+  background-image: none;
+}
+/* line 291, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003291}}
+.item-social a.comment:before {
+  color: red;
+  content: '\e802';
+}
+/* line 300, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003300}}
+.titleBarActionIcon:before,
+.item-social a:before {
+  padding-top: 5px;
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+
+  /* remove if not needed */
+
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+
+  font-size: 16px;
+  /* Uncomment for 3D effect */
+
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+/* user and site welcome dashlet */
+/* line 337, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003337}}
+.yui-skin-airwork div.dashlet.user-welcome div.detail-list-item-alt,
+.yui-skin-airwork div.dashlet.site-welcome div.detail-list-item-alt {
+  border-bottom-color: #dddddd;
+}
+/* line 344, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003344}}
+.dashlet .welcome-body a,
+.dashlet .welcome-body a:visited,
+.dashlet .welcome-body a:hover {
+  color: #0600cc;
+}
+/* line 351, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003351}}
+.dashlet .detail-list-item {
+  border-bottom: 1px dashed #e9e9e9;
+}
+/* line 356, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003356}}
+.yui-skin-airwork .yui-panel {
+  border-bottom: medium none;
+}
+/* line 361, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003361}}
+.yui-skin-airwork .mask {
+  opacity: 0.4;
+}
+/* line 366, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003366}}
+.yui-skin-airwork .yui-panel .hd,
+.yui-skin-airwork .yui-panel .form-buttons,
+.yui-skin-airwork .yui-panel .bdft,
+.yui-skin-airwork .yui-panel .ft {
+  color: #333333;
+  background: #eff3fa;
+  border-bottom: 1px solid #C5C7C6;
+  border-left-color: #C5C7C6;
+  border-right-color: #C5C7C6;
+}
+/* line 378, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003378}}
+.yui-skin-airwork .yui-panel .hd {
+  font-size: 123.1%;
+  font-weight: bold;
+  border-bottom: 1px solid #C5C7C6;
+}
+/* line 385, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003385}}
+.yui-skin-airwork .yui-panel .form-buttons,
+.yui-skin-airwork .yui-panel .bdft {
+  font-size: 100%;
+  border-top: 1px solid #C5C7C6;
+}
+/* line 392, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003392}}
+.yui-skin-airwork .yui-panel div.form-fields {
+  border-bottom: none;
+}
+/* line 397, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003397}}
+.yui-skin-airwork .yui-panel .ft {
+  border-top: 1px solid #C5C7C6;
+  padding: 5px;
+}
+/* line 403, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003403}}
+.yui-skin-airwork .yui-panel .bd {
+  color: #333333;
+  background-color: #fff;
+  border-left-color: #C5C7C6;
+  border-right-color: #C5C7C6;
+}
+/* line 411, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003411}}
+.yui-skin-airwork .yui-panel .bd .yui-resize .yui-resize-handle {
+  background-color: red;
+}
+/* line 418, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003418}}
+.yui-skin-airwork .yui-resize .yui-resize-handle-active {
+  background-color: #43484d;
+}
+/* Data Lists: DataTable (Needs to appear before yui-dt-highlighted rule) */
+/* line 426, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003426}}
+.yui-skin-airwork .datagrid tr.yui-dt-even {
+  background-color: #ffffff;
+}
+/* line 430, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003430}}
+.yui-skin-airwork .datagrid tr.yui-dt-even td.yui-dt-asc,
+.yui-skin-airwork .datagrid tr.yui-dt-even td.yui-dt-desc {
+  background-color: #f8f8f8;
+}
+/* line 436, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003436}}
+.yui-skin-airwork .datagrid tr.yui-dt-odd {
+  background-color: #f8f8f8;
+}
+/* line 440, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003440}}
+.yui-skin-airwork .datagrid tr.yui-dt-odd td.yui-dt-asc,
+.yui-skin-airwork .datagrid tr.yui-dt-odd td.yui-dt-desc {
+  background-color: #f0f0f0;
+}
+/* End Data Lists */
+/* line 448, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003448}}
+.yui-skin-airwork .yui-dt-data tr.yui-dt-highlighted td.yui-dt-asc,
+.yui-skin-airwork .yui-dt-data tr.yui-dt-highlighted td.yui-dt-desc {
+  background-color: #F3F5FF;
+  cursor: auto;
+}
+/* line 455, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003455}}
+.yui-skin-airwork .yui-dt-message,
+.yui-skin-airwork .yui-dt-message tr.yui-dt-highlighted {
+  background-color: white;
+}
+/* Style the default message  */
+/* line 463, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003463}}
+.yui-skin-airwork #message .bd {
+  background-color: #808080;
+  color: white;
+}
+/* line 469, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003469}}
+.yui-skin-airwork #message .bd span.wait {
+  background-image: url(images/wait.gif);
+  background-repeat: no-repeat;
+}
+/* line 475, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003475}}
+.yui-skin-airwork .yui-overlay-hidden #message .bd span.wait {
+  display: none;
+}
+/* Style the default prompt */
+/* line 482, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003482}}
+.yui-skin-airwork #prompt,
+.yui-skin-airwork #userInput {
+  border-top: 1px solid #C5C7C6;
+  border-bottom: 1px solid #C5C7C6;
+  background-color: #E3EDE6;
+}
+/* line 490, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003490}}
+.yui-skin-airwork #prompt .bd,
+.yui-skin-airwork #userInput .bd {
+  background-color: #e3ebec;
+}
+/* line 496, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003496}}
+.yui-skin-airwork #prompt .ft,
+.yui-skin-airwork #userInput .yui-skin-airwork.ft {
+  border-left: 1px solid #c4c5c5;
+  border-right: 1px solid #c4c5c5;
+  background-color: #e3ebec;
+}
+/* Page title and navigation styles */
+/* line 506, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003506}}
+.page-title {
+  background-color: #6CA5CE;
+  color: white;
+}
+/* line 512, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003512}}
+.page-title a,
+.page-title a:visited {
+  color: #333;
+}
+/* line 518, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003518}}
+.page-title a:hover {
+  color: #fff;
+}
+/* line 523, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003523}}
+.page-title h1 span {
+  color: #000;
+}
+/* line 528, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003528}}
+.site-navigation {
+  background-color: #fff;
+  border-bottom: 1px solid #bbccff;
+  color: white;
+}
+/* line 536, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003536}}
+span.navigation-separator,
+span.navigation-item,
+span.navigation-item-alt {
+  color: #9fc6e1;
+  font-size: 14px;
+}
+/* line 544, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003544}}
+span.navigation-item a,
+span.navigation-item a:visited {
+  color: #999999;
+  font-weight: bold;
+  text-decoration: none;
+}
+/* line 552, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003552}}
+span.navigation-item a.active-page,
+span.navigation-item a.active-page:visited,
+span.navigation-item a:hover {
+  color: #FFF;
+  font-weight: bold;
+}
+/* line 560, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003560}}
+span.navigation-item a:hover {
+  color: #FFF;
+  text-decoration: underline;
+  font-weight: bold;
+}
+/* line 568, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003568}}
+span.navigation-separator {
+  border-right: 1px dotted #999999;
+}
+/* line 573, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003573}}
+span.navigation-separator-alt {
+  border-right: 1px solid #999999;
+}
+/* Standard toolbars */
+/* line 580, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003580}}
+.share-toolbar,
+.toolbar {
+  background-color: #F9F9F9;
+  border-bottom: 1px solid #E3E3E3;
+}
+/* line 587, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003587}}
+.share-toolbar .action-bar,
+.toolbar .action-bar {
+  border-right: 1px solid #E3E3E3;
+}
+/* line 593, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003593}}
+.share-toolbar .separator,
+.toolbar .separator {
+  border: medium none;
+  border-right: 1px dotted #3a6c38;
+}
+/* line 600, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003600}}
+.share-toolbar .backLink {
+  background-image: url(../../components/images/back-arrow.png);
+  background-position: left center;
+  background-repeat: no-repeat;
+  color: #333333;
+  padding: 0 5px 0 19px;
+  margin-right: 5px;
+}
+/* line 610, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003610}}
+.share-toolbar .forwardLink {
+  background-image: url(../../components/images/forward-arrow-16.png);
+  background-position: right center;
+  background-repeat: no-repeat;
+  color: #333333;
+  padding: 0 21px 0 5px;
+  margin-right: 5px;
+}
+/* line 620, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003620}}
+.sticky-wrapper strong {
+  font-weight: bold;
+}
+/* line 625, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003625}}
+.sticky-wrapper em {
+  font-style: italic;
+}
+/* line 630, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003630}}
+.rich-content a.wiki-missing-page {
+  color: #CC2200 !important;
+}
+/* Share forms */
+/* line 637, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003637}}
+.share-form .form-container .form-fields {
+  border: 1px solid #c2c2c2 !important;
+  background-color: #eff3fa;
+}
+/* line 643, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003643}}
+.yui-skin-airwork .yui-navset .yui-content {
+  background: #f4f6fe;
+}
+/* line 648, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003648}}
+.input,
+.sticky-wrapper input[type="text"],
+.sticky-wrapper input[type="password"],
+.sticky-wrapper textarea,
+.sticky-wrapper select,
+.yui-overlay input[type="text"],
+.yui-overlay input[type="password"],
+.yui-overlay textarea,
+.yui-overlay select,
+.form-element-border,
+.share-form .yui-dt table {
+  border: 1px solid #cccccc;
+  font-weight: normal;
+}
+/* line 664, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003664}}
+.share-form .yui-dt table td.yui-dt-last {
+  border-right: none;
+}
+/* line 669, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003669}}
+.form-element-background-color {
+  background-color: #FFFFFF;
+}
+/* same as theme-color-2 */
+/* line 676, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003676}}
+.toolbar .link a:hover,
+.members-bar .member-link a:hover {
+  color: #008000;
+}
+/* Richtext Editor Plug-ins */
+/* line 684, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003684}}
+.yui-toolbar-container .yui-toolbar-alfresco-imagelib span.yui-toolbar-icon,
+span.mce_alfresco-imagelibrary {
+  background-position: 0 0 !important;
+  background-image: url(images/alfresco-imagelib.png) !important;
+}
+/* line 691, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003691}}
+.mce_alfresco-imagelibrary img {
+  background-position: 0px 2px !important;
+}
+/* line 696, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003696}}
+.yui-toolbar-container .yui-toolbar-alfresco-imagelib span.yui-toolbar-icon,
+span.mce_alfresco-linklibrary {
+  background-position: 0 0 !important;
+  background-image: url(images/alfresco-linklib.png) !important;
+}
+/* line 703, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003703}}
+.mce_alfresco-linklibrary img {
+  background-position: 0px 2px !important;
+}
+/* Point the YUI button to the themed sprite */
+/* line 710, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003710}}
+.yui-skin-airwork .yui-button {
+  background-image: url(images/sprite.png);
+  border-color: #b7b7b7;
+}
+/* line 716, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003716}}
+.yui-skin-airwork .yui-button .first-child {
+  border-color: #b7b7b7;
+}
+/* Override YUI Button styles for - flat button style */
+/* line 723, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003723}}
+.yui-skin-airwork div.flat-button span.yui-button {
+  background: none;
+  border-color: transparent;
+}
+/* line 729, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003729}}
+.yui-skin-airwork div.flat-button span.yui-button span.first-child {
+  border-color: transparent;
+}
+/* line 734, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003734}}
+.yui-skin-airwork div.flat-button span.yui-button-hover {
+  background: transparent url(images/sprite.png) repeat-x scroll 0 0;
+  border-color: #999;
+}
+/* line 740, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003740}}
+.yui-skin-airwork div.flat-button span.yui-button-hover span.first-child {
+  border-color: #999;
+}
+/* line 745, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003745}}
+.yui-skin-airwork div.flat-button span.yui-radio-button-checked,
+.yui-skin-airwork div.flat-button span.yui-checkbox-button-checked {
+  background: #6688ee none;
+}
+/* Override checked styles for doclist */
+/* line 753, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003753}}
+.yui-skin-airwork .no-check-bg div.flat-button span.yui-radio-button-checked,
+.yui-skin-airwork .no-check-bg div.flat-button span.yui-checkbox-button-checked,
+.yui-skin-airwork .no-check-bg div.flat-button span.yui-radio-button-checked,
+.yui-skin-airwork .no-check-bg div.flat-button span.yui-checkbox-button-checked {
+  background: none;
+}
+/* Ensure hover state can be activated */
+/* line 763, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003763}}
+.yui-skin-airwork .no-check-bg div.flat-button span.yui-button-hover {
+  background: transparent url(images/sprite.png) repeat-x scroll 0 0;
+  border-color: #999;
+}
+/* Override YUI Button styles for - title button style */
+/* line 771, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003771}}
+.yui-skin-airwork .title-button .yui-button {
+  background: transparent url(images/title-button-bg.png) repeat-x 0 0;
+  border-color: #9baad4;
+}
+/* line 777, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003777}}
+.yui-skin-airwork .title-button a:hover {
+  color: #333;
+}
+/* line 784, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003784}}
+.yui-skin-airwork .title-button .yui-button {
+  background-image: none;
+  background-color: #1ac09d;
+  border-color: #1ac09d;
+  border: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 790, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003790}}
+.yui-skin-airwork .title-button .yui-button .first-child {
+  border: none;
+  padding: 8px 16px;
+  color: white;
+  font-weight: bold;
+  border-color: #1ac09d;
+}
+/* Override YUI Button styles for - attention button style */
+/* line 807, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003807}}
+.yui-skin-airwork .alfresco-attention-yui-button,
+.yui-skin-airwork .alfresco-attention-yui-button span.first-child {
+  border-color: #e0b000;
+}
+/* line 813, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003813}}
+.yui-skin-airwork .alfresco-attention-yui-button.yui-button {
+  background-position: 0 -2000px;
+}
+/* line 818, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003818}}
+.yui-skin-airwork .alfresco-attention-yui-button.yui-button-hover {
+  background-position: 0 -2100px;
+}
+/* line 823, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003823}}
+.yui-skin-airwork .alfresco-attention-yui-button.yui-button-disabled {
+  background-position: 0 -2200px;
+}
+/* Paginator link styling */
+/* line 830, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003830}}
+.yui-skin-airwork .yui-pg-container span {
+  color: #606060;
+}
+/* line 835, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003835}}
+.yui-skin-airwork .yui-pg-container span.yui-pg-page.yui-pg-current-page {
+  color: #333333;
+  font-weight: bold;
+}
+/* line 841, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003841}}
+.yui-skin-airwork .yui-pg-container a.yui-pg-first,
+.yui-skin-airwork .yui-pg-container a.yui-pg-previous,
+.yui-skin-airwork .yui-pg-container a.yui-pg-page,
+.yui-skin-airwork .yui-pg-container a.yui-pg-next,
+.yui-skin-airwork .yui-pg-container a.yui-pg-last {
+  border-color: #CBCBCB;
+  color: #0600CC;
+  text-decoration: none;
+}
+/* line 852, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003852}}
+.yui-skin-airwork .yui-pg-container a.yui-pg-first:hover,
+.yui-skin-airwork .yui-pg-container a.yui-pg-previous:hover,
+.yui-skin-airwork .yui-pg-container a.yui-pg-page:hover,
+.yui-skin-airwork .yui-pg-container a.yui-pg-next:hover,
+.yui-skin-airwork .yui-pg-container a.yui-pg-last:hover {
+  text-decoration: underline;
+}
+/* A combination of a link and splitbutton wrapped inside a span */
+/* line 863, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003863}}
+.yui-skin-airwork .link-menu-button .yui-button span button {
+  color: #4C4C4C;
+  font-size: 2px;
+  background-image: url(images/link-menu-button-arrow.png);
+  background-position: center center;
+}
+/* line 871, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003871}}
+body.yui-skin-airwork .link-menu-button .yui-button.yui-button-hover {
+  background-color: #FFFFFF;
+  border: 1px solid #3c54d3;
+}
+/* line 877, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003877}}
+body.yui-skin-airwork .link-menu-button.link-menu-button-menu-active .yui-button.yui-button-hover {
+  border-color: transparent;
+  background-color: transparent;
+}
+/* line 883, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003883}}
+.yui-skin-airwork .link-menu-button .yui-button span.first-child,
+.yui-skin-airwork .link-menu-button .yui-button.yui-button-activeoption span.first-child,
+.yui-skin-airwork .link-menu-button .yui-button.yui-button-hover span.first-child {
+  border-width: 0;
+}
+/* line 890, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003890}}
+.yui-skin-airwork .link-menu-button span.link-menu-button-link {
+  border-right: 1px #BDBDBD solid;
+}
+/* line 895, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003895}}
+body.yui-skin-airwork .link-menu-button.link-menu-button-menu-active {
+  background-color: #FFFFFF;
+  border: 1px solid #3c54d3;
+}
+/* line 901, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003901}}
+.yui-skin-airwork .link-menu-button.link-menu-button-menu-active .yui-button.yui-menu-button-hover {
+  border: 1px solid #FFFFFF;
+}
+/* line 906, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003906}}
+.topiclist .yui-dt-liner {
+  padding: 0;
+}
+/* blog/wiki action items links */
+/* YUI Menu */
+/* line 924, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003924}}
+body.yui-skin-airwork .yuimenu .bd {
+  margin-top: 10px;
+  border: 1px solid #1ac09d;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 4px;
+  background-color: #1ac09d;
+  color: white;
+}
+/* line 934, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003934}}
+body.yui-skin-airwork .yuimenu .bd a:focus {
+  outline: none;
+}
+/* YUI Menu roll over state */
+/* line 941, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003941}}
+.yui-menu-shadow-visible {
+  visibility: hidden !important;
+}
+/* line 945, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003945}}
+body.yui-skin-airwork .yuimenuitemlabel {
+  text-decoration: none;
+  line-height: 2.2em;
+}
+/* line 951, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003951}}
+body.yui-skin-airwork .yuimenu .bd ul li.yuimenuitem-selected {
+  background-color: #149378;
+}
+/* line 956, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003956}}
+body.yui-skin-airwork .yuimenu .bd ul li.yuimenuitem .yuimenuitemlabel,
+body.yui-skin-airwork .yuimenu .bd ul li.yuimenuitem .yuimenuitemlabel a,
+body.yui-skin-airwork .yuimenu .bd ul li.yuimenuitem-selected div .yuimenuitemlabel,
+body.yui-skin-airwork .yuimenu .bd ul li.yuimenuitem-selected div .yuimenuitemlabel a {
+  color: white;
+}
+/* line 964, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003964}}
+body.yui-skin-airwork .yuimenu .bd ul li.yuimenuitem-selected .yuimenuitemlabel,
+body.yui-skin-airwork .yuimenu .bd ul li.yuimenuitem-selected .yuimenuitemlabel a,
+body.yui-skin-airwork .yuimenu .bd ul li.yuimenuitem-selected div ul li.yuimenuitem-selected .yuimenuitemlabel,
+body.yui-skin-airwork .yuimenu .bd ul li.yuimenuitem-selected div ul li.yuimenuitem-selected .yuimenuitemlabel a,
+body.yui-skin-airwork .yuimenu .bd ul li.yuimenuitem-selected span.description {
+  color: #FFF;
+}
+/* line 973, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003973}}
+body.yui-skin-airwork .yuimenu .bd ul li.yuimenuitem .yuimenuitemlabel-disabled {
+  color: #A6A6A6;
+  cursor: default;
+}
+/*end YUI Menu */
+/* Location */
+/* line 983, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003983}}
+.yui-skin-airwork .location-path,
+.yui-skin-airwork .location-site {
+  background-position: left 50%;
+  background-repeat: no-repeat;
+  padding: 2px 0 2px 20px;
+}
+/* line 991, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003991}}
+.yui-skin-airwork .location-none {
+  margin-left: 0.5em;
+}
+/* line 996, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\00003996}}
+.yui-skin-airwork .location-path {
+  background-image: url(../../components/documentlibrary/images/folder-closed-16.png);
+  margin-left: 0.5em;
+}
+/* line 1002, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031002}}
+.yui-skin-airwork .location-site {
+  background-image: url(../../components/images/site-16.png);
+}
+/* end Location*/
+/* Profile */
+/* line 1011, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031011}}
+.yui-skin-airwork .profile .header-bar,
+.yui-skin-airwork .password .header-bar {
+  background-color: #eef2f6;
+  border-bottom: none;
+  padding-left: .5em;
+}
+/* Doclist */
+/* line 1019, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031019}}
+.yui-skin-airwork .toolbar .nav-bar {
+  background-color: #fff;
+}
+/* line 1024, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031024}}
+body.yui-skin-airwork .doclist .more-actions a:active,
+body.yui-skin-airwork .doclist .more-actions a:hover {
+  background-color: #6688EE;
+}
+/* line 1030, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031030}}
+body.yui-skin-airwork .doclist div.more-actions {
+  border: 1px solid #3c54d3;
+}
+/* line 1035, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031035}}
+body.yui-skin-airwork .doclist .action-set a:active,
+body.yui-skin-airwork .doclist .action-set a:hover,
+body.yui-skin-airwork .doclist .action-set .highlighted,
+#divCalendarContent .yui-dt-col-actions a:active,
+#divCalendarContent .yui-dt-col-actions a:hover {
+  border: 1px solid #6688EE;
+}
+/* line 1044, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031044}}
+body.yui-skin-airwork .yui-dt-data tr.yui-dt-highlighted,
+body.yui-skin-airwork .doclist tr.yui-dt-odd.yui-dt-highlighted,
+body.yui-skin-airwork .doclist tr.yui-dt-even.yui-dt-highlighted,
+body.yui-skin-airwork .links-body tr.links-selected-row,
+body.yui-skin-airwork .over,
+.topicview {
+  background-color: #F3F5FF;
+}
+/* line 1054, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031054}}
+.site-members .search-controls {
+  background-color: #F5F5F5;
+}
+/* line 1059, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031059}}
+body.yui-skin-airwork .doclist tr.yui-dt-odd.yui-dt-highlighted td.yui-dt-last,
+body.yui-skin-airwork .doclist tr.yui-dt-even.yui-dt-highlighted td.yui-dt-last {
+  border-left: 1px solid #e5eaf6;
+}
+/* line 1065, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031065}}
+body.yui-skin-airwork .categoryview .category .ygtvtn,
+body.yui-skin-airwork .categoryview .category .ygtvtm,
+body.yui-skin-airwork .categoryview .category .ygtvtmh,
+body.yui-skin-airwork .categoryview .category .ygtvtmhh,
+body.yui-skin-airwork .categoryview .category .ygtvtp,
+body.yui-skin-airwork .categoryview .category .ygtvtph,
+body.yui-skin-airwork .categoryview .category .ygtvtphh,
+body.yui-skin-airwork .categoryview .category .ygtvln,
+body.yui-skin-airwork .categoryview .category .ygtvlm,
+body.yui-skin-airwork .categoryview .category .ygtvlmh,
+body.yui-skin-airwork .categoryview .category .ygtvlmhh,
+body.yui-skin-airwork .categoryview .category .ygtvlp,
+body.yui-skin-airwork .categoryview .category .ygtvlph,
+body.yui-skin-airwork .categoryview .category .ygtvlphh,
+body.yui-skin-airwork .categoryview .category .ygtvdepthcell {
+  background-image: url(images/categoryview-sprite.gif);
+}
+/* details page */
+/* line 1082, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031082}}
+.yui-skin-airwork .path-nav {
+  background-color: #F9F9F9;
+  border-bottom-color: #E3E3E3;
+}
+/* line 1088, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031088}}
+.yui-skin-airwork div.web-preview.shadow .hd {
+  background-color: #fff;
+}
+/* line 1093, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031093}}
+.yui-skin-airwork .addCommentForm {
+  border-top-color: #E3E3E3;
+}
+/* line 1098, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031098}}
+.yui-skin-airwork .document-details-comments {
+  border-right-color: #E3E3E3;
+}
+/* Loader */
+/* line 1104, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031104}}
+.yui-skin-airwork .fileupload-center-div .fileupload-progressSuccess-span {
+  background-image: url(images/progress.jpg);
+}
+/* END DOCLIST */
+/* invite page */
+/* line 1113, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031113}}
+.inviteusersbyemail .byemailbody {
+  background-color: #fbfbfb;
+}
+/* line 1118, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031118}}
+.people-finder .results {
+  background-color: #fff;
+}
+/* line 1123, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031123}}
+.yui-skin-airwork .dayview h2,
+.weekview h2,
+.yui-skin-airwork .calendar.weekview thead th,
+.yui-skin-airwork .calendar.monthview thead th {
+  color: #000;
+}
+/* line 1130, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031130}}
+.yui-skin-airwork .people-finder .finder-wrapper {
+  border-color: #DDDDDD;
+}
+/* line 1135, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031135}}
+.yui-skin-airwork .sent-invites .search-bar {
+  background-color: #F9F9F9;
+}
+/* line 1141, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031141}}
+.yui-skin-airwork .invitationlist .invitelist-ba {
+  background-color: #F9F9F9;
+  border-bottom: 1px dashed #C0C0C0;
+}
+/* line 1147, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031147}}
+.yui-skin-airwork .invitationlist {
+  border: 1px solid #DDDDDD;
+}
+/* line 1152, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031152}}
+.yui-skin-airwork .invitationlist .inviteelist {
+  background-color: #fff;
+}
+/* filter list link */
+/* line 1160, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031160}}
+.yui-skin-airwork li.selected,
+body.yui-skin-airwork .treeview .selected,
+body.yui-skin-airwork .categoryview .selected,
+body.yui-skin-airwork .yui-columnbrowser .yui-carousel-content li.yui-columnbrowser-column a.yui-columnbrowser-item-selected {
+  background-color: #dee6ff;
+}
+/* these rules need to be separate from the above for ie6 */
+/* line 1169, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031169}}
+.yui-skin-airwork .treeview .selected > table,
+.yui-skin-airwork .categoryview .selected > table {
+  background-color: #dee6ff;
+}
+/* line 1175, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031175}}
+.yui-skin-airwork .filter a.disabled,
+.yui-skin-airwork .filter a.disabled:active,
+.yui-skin-airwork .filter a.disabled:hover,
+.yui-skin-airwork .filter a.disabled:visited,
+.yui-skin-airwork .tags a.disabled,
+.yui-skin-airwork .tags a.disabled:active,
+.yui-skin-airwork .tags a.disabled:hover,
+.yui-skin-airwork .tags a.disabled:visited {
+  color: #a6a6a6;
+  cursor: not-allowed;
+}
+/* line 1188, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031188}}
+.yui-skin-airwork .filter a:hover,
+.yui-skin-airwork .tags a:hover {
+  text-decoration: none;
+}
+/* Link color */
+/* line 1196, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031196}}
+.yui-skin-airwork .node .nodeTitle a,
+.yui-skin-airwork .node .nodeURL a,
+.yui-skin-airwork .nodeAttrValue a,
+.yui-skin-airwork .nodeFooter .tag a,
+.yui-skin-airwork .yui-dt-highlighted .detail .tag a,
+.yui-skin-airwork .yui-dt-highlighted .detail .category a,
+.yui-skin-airwork .yui-dt-highlighted .detail .item-social a,
+.yui-skin-airwork a.wiki-tag-link,
+.yui-skin-airwork .node .userLink a,
+.yui-skin-airwork .site-members h3 a,
+.yui-skin-airwork .yui-calendar td.calcell a,
+.yui-skin-airwork .doclist .documents a,
+.yui-skin-airwork .attrValue a,
+.yui-skin-airwork .detail .item a,
+.yui-skin-airwork .info .meta-value a,
+.yui-skin-airwork .rules-none a,
+.yui-skin-airwork .agendaview a,
+.yui-skin-airwork a.previousEvents,
+.yui-skin-airwork a.nextEvents,
+.yui-skin-airwork div.channels a {
+  color: #2abf9e;
+}
+/* line 1220, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031220}}
+.yui-skin-airwork .detail .tag a,
+.yui-skin-airwork .detail .category a,
+.yui-skin-airwork .detail .item-social a,
+.yui-skin-airwork .document-tags .tag {
+  color: #333;
+}
+/* line 1228, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031228}}
+.yui-skin-airwork .detail .tag a,
+.yui-skin-airwork .document-tags .tag {
+  background-color: #e8e8e8;
+}
+/* line 1235, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031235}}
+.yui-skin-airwork .site-navigation {
+  background-color: #43484d;
+  border-left: 20px solid white;
+  border-right: 20px solid white;
+  -webkit-border-radius: 4px 4px 0px 0px;
+  -moz-border-radius: 4px 4px 0px 0px;
+  border-radius: 4px 4px 0px 0px;
+  line-height: 3em;
+  color: white;
+}
+/* line 1245, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031245}}
+.yui-skin-airwork .site-navigation span.navigation-item {
+  color: white;
+}
+/* line 1247, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031247}}
+.yui-skin-airwork .site-navigation span.navigation-item a.active-page {
+  color: #f17543;
+}
+/* line 1255, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031255}}
+.cmis .body a {
+  color: #00AE42;
+}
+/* line 1260, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031260}}
+.yui-skin-airwork .rules-list a {
+  color: #526A53;
+}
+/* line 1265, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031265}}
+.yui-skin-airwork .toolbar .yui-checkbox-button-checked button {
+  color: #fff;
+}
+/* CALENDAR */
+/* line 1272, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031272}}
+.yui-skin-airwork .toolbar .yui-radio-button-checked button,
+.yui-skin-airwork .toolbar .yui-checkbox-button-checked button {
+  color: #333;
+}
+/* line 1278, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031278}}
+.yui-skin-airwork .yui-button {
+  background-image: url(images/sprite.png);
+}
+/* line 1283, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031283}}
+.yui-skin-airwork .calendar-bar .yui-u.first {
+  border-right-color: #E3E3E3;
+}
+/* line 1288, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031288}}
+.yui-skin-airwork .dayview h2,
+.weekview h2,
+.yui-skin-airwork .calendar.weekview thead th,
+.yui-skin-airwork .calendar.monthview thead th {
+  color: #000;
+}
+/*  MonthView grid/table - start */
+/* line 1296, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031296}}
+.yui-skin-airwork div.allday,
+div.multipleAllDay {
+  background-color: #b65454;
+}
+/* line 1301, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031301}}
+.yui-skin-airwork .calendar td a.dayLabel {
+  margin: 0;
+  padding-right: 0.3em;
+  background-color: #e8eef7;
+}
+/* line 1308, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031308}}
+.yui-skin-airwork div.vevent.allday div {
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 1px;
+}
+/* line 1316, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031316}}
+.yui-skin-airwork .calendar td.disabled div {
+  background-color: #f7f7f7;
+  color: white;
+}
+/* line 1322, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031322}}
+.yui-skin-airwork .calendar.monthview td.current {
+  background-color: #FFFEDF;
+}
+/* line 1327, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031327}}
+.yui-skin-airwork .vcalendar table {
+  border-bottom-color: #c3d9ff;
+  border-top-color: #c3d9ff;
+}
+/* line 1333, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031333}}
+.yui-skin-airwork .calendar.monthview td {
+  border-top-color: #c3d9ff;
+  border-right-color: #c3d9ff;
+}
+/* line 1339, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031339}}
+.yui-skin-airwork .calendar.monthview thead th {
+  border-right-color: #c3d9ff;
+}
+/* MonthView grid/table - end */
+/* WeekView grid/table - start */
+/* line 1346, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031346}}
+.yui-skin-airwork tr#collapseTrigger td {
+  border-bottom-color: #c3d9ff;
+}
+/* line 1351, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031351}}
+.yui-skin-airwork .calendar.weekview thead th {
+  border-left-color: #c3d9ff;
+}
+/* line 1356, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031356}}
+.yui-skin-airwork .calendar.weekview tbody tr.alldayRow td {
+  border-left-color: #c3d9ff;
+}
+/* line 1361, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031361}}
+.yui-skin-airwork tr.alldayRow td {
+  border-bottom-color: #c3d9ff;
+}
+/* line 1366, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031366}}
+.yui-skin-airwork .calendar.weekview th {
+  border-bottom-color: #c3d9ff;
+}
+/* line 1371, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031371}}
+.yui-skin-airwork .weekview div.day,
+.dayview div.day {
+  border-bottom-color: #c3d9ff;
+  border-left-color: #c3d9ff;
+  border-right-color: #c3d9ff;
+}
+/* line 1378, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031378}}
+.yui-skin-airwork .hourSegment {
+  border-bottom-color: #c3d9ff;
+}
+/* line 1383, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031383}}
+.yui-skin-airwork .calendar.weekview tbody tr.alldayRow th {
+  background-color: #e8eef7;
+}
+/* line 1388, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031388}}
+.yui-skin-airwork .calendar.weekview tbody th {
+  background-color: #e8eef7;
+}
+/* WeekView grid/table - end */
+/* DayView grid/table - start */
+/* line 1395, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031395}}
+.yui-skin-airwork .dayview td {
+  border-bottom-color: #c3d9ff;
+}
+/* line 1400, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031400}}
+.yui-skin-airwork .dayview th {
+  border-bottom-color: #c3d9ff;
+  border-right-color: #c3d9ff;
+  background-color: #e8eef7;
+}
+/* line 1407, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031407}}
+.yui-skin-airwork .dayview div.day {
+  border-left-color: #c3d9ff;
+  border-right-color: #c3d9ff;
+}
+/* DayView grid/table - end */
+/* line 1414, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031414}}
+.yui-skin-airwork #calendarendpicker a,
+.yui-skin-airwork #calendarpicker a {
+  /* New event dialog icon overide */
+
+  background-image: url(images/calendar.png);
+  background-position: 4px 3px;
+}
+/* line 1421, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031421}}
+.yui-skin-airwork #divCalendarContent {
+  border-left-color: #c3d9ff;
+}
+/* Day/Week timed events */
+/* line 1427, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031427}}
+.fc-content .fc-event-skin {
+  background-color: #0600cc;
+  /* Theme Colour 1 */
+
+  border-color: #cacaca;
+  color: #FFFFFF;
+}
+/* Month view timed events */
+/* line 1435, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031435}}
+.fc-content .fc-view-month .fc-event-skin {
+  background-color: transparent;
+  border-color: transparent;
+  color: #0600cc;
+}
+/* All day events */
+/* line 1443, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031443}}
+.fc-content .fc-event-allday .fc-event-skin,
+.fc-content a.fc-event.fc-event-allday,
+.fc-content .fc-view-month .fc-event-multiday .fc-event-skin,
+.fc-content .fc-view-month a.fc-event.fc-event-multiday {
+  background-color: #0600cc;
+  border-color: #0600cc;
+  color: #FFFFFF;
+}
+/* line 1454, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031454}}
+.fc-content a.fc-event-skin:hover {
+  color: #FFFFFF;
+}
+/* END CALENDAR */
+/* Document */
+/* line 1464, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031464}}
+.document-version {
+  background-color: #aaa;
+  color: #fff;
+}
+/* Links */
+/* line 1472, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031472}}
+.yui-skin-airwork .links-header .links-toolbar {
+  background-color: #F9F9F9;
+  border-bottom-color: #E3E3E3;
+}
+/* line 1478, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031478}}
+.yui-skin-airwork .links-header .links-titlebar {
+  background-color: #fff;
+}
+/* Discussions */
+/* line 1485, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031485}}
+.yui-skin-airwork .topicview {
+  background-color: #F3F5FF;
+  border: 1px dashed #cccccc;
+}
+/* Members */
+/* line 1493, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031493}}
+.yui-skin-airwork .members-bar {
+  border-bottom-color: #E3E3E3;
+}
+/* Twisters */
+/* line 1500, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031500}}
+.alfresco-twister-open {
+  background: transparent url(images/expanded.png) no-repeat scroll 0 50%;
+}
+/* line 1505, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031505}}
+.alfresco-twister-closed {
+  background: transparent url(images/collapsed.png) no-repeat scroll 0 50% !important;
+}
+/* Preview Tooltip */
+/* line 1512, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031512}}
+.yui-tt .bd {
+  background-color: #f4faff !important;
+  border: 1px solid #333 !important;
+  padding: 4px 4px 1px !important;
+  text-align: left;
+}
+/* Theme colors */
+/* line 1522, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031522}}
+.theme-color-1,
+a.theme-color-1,
+a.theme-color-1:visited,
+a.theme-color-1:hover {
+  color: #f17543;
+}
+/* line 1530, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031530}}
+.theme-color-2,
+a.theme-color-2,
+a.theme-color-2:visited,
+a.theme-color-2:hover {
+  color: #333333;
+}
+/* line 1538, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031538}}
+.theme-color-3,
+a.theme-color-3,
+a.theme-color-3:visited,
+a.theme-color-3:hover {
+  color: #fff;
+}
+/* line 1546, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031546}}
+.theme-color-4,
+a.theme-color-4,
+a.theme-color-4:visited,
+a.theme-color-4:hover {
+  color: #999999;
+}
+/* line 1554, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031554}}
+.theme-color-5,
+a.theme-color-5,
+a.theme-color-5:visited,
+a.theme-color-5:hover {
+  color: #fff;
+}
+/* Theme background colors */
+/* line 1564, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031564}}
+.theme-bg-color-1,
+div.theme-bg-color-1 {
+  background-color: white;
+  border: none;
+}
+/* line 1571, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031571}}
+.theme-bg-color-2,
+div.theme-bg-color-2 {
+  background-color: #fff;
+}
+/* line 1577, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031577}}
+.theme-bg-color-3,
+div.theme-bg-color-3 {
+  background-color: #F9F9F9;
+}
+/* line 1583, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031583}}
+.theme-bg-color-4,
+div.theme-bg-color-4 {
+  background-color: #fff;
+}
+/* line 1589, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031589}}
+.theme-bg-color-5,
+div.theme-bg-color-5 {
+  background-color: #2FB42C;
+}
+/* line 1595, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031595}}
+.theme-bg-color-6,
+div.theme-bg-color-6 {
+  background-color: #f3f5ff;
+}
+/* Used for editing - same as meta data fields */
+/* line 1603, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031603}}
+.theme-bg-color-7,
+div.theme-bg-color-7 {
+  background-color: #F5FFF2;
+}
+/* line 1609, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031609}}
+.theme-bg-color-8,
+div.theme-bg-color-8 {
+  background-color: #FFFFFF;
+}
+/* line 1620, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031620}}
+.theme-bg-2 {
+  background-color: #f9f9f9;
+}
+/* line 1625, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031625}}
+.theme-bg-selected {
+  background-color: #bbccff;
+}
+/* Theme border type/colors */
+/* line 1632, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031632}}
+.theme-border-1 {
+  border-color: #468058;
+}
+/* line 1637, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031637}}
+.theme-border-2 {
+  border-color: #C3D9FF;
+}
+/* line 1642, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031642}}
+.theme-border-3 {
+  border: 1px dashed #ccc !important;
+}
+/* line 1647, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031647}}
+.theme-border-4 {
+  border: 1px solid #DDD6A0;
+}
+/* line 1652, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031652}}
+.alfresco-guest .sticky-wrapper {
+  background-color: #B4B4B4;
+}
+/* line 1657, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031657}}
+.alfresco-guest .theme-overlay {
+  background-image: url(images/overlay-bg.png);
+  background-repeat: repeat;
+  background-position: top right;
+  border: 3px solid #fff;
+  outline: 1px solid #c3d9ff;
+}
+/* line 1666, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031666}}
+.theme-company-logo {
+  height: 64px;
+  width: 450px;
+  background: transparent url(images/logo.png) no-repeat;
+}
+/* line 1673, /Users/lawrencm/projects/aw/share/src/main/amp/web/themes/airwork/dev.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/lawrencm\/projects\/aw\/share\/src\/main\/amp\/web\/themes\/airwork\/dev\.less}line{font-family:\000031673}}
+.theme-flow-arrow {
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  height: 98px;
+  background: url(images/flow-arrow.png) no-repeat;
+}

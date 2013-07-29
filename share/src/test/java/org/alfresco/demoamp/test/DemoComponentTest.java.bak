@@ -1,0 +1,264 @@
+package org.alfresco.demoamp.test;
+
+import static org.junit.Assert.assertEquals;
+
+import java.util.List;
+
+import static org.junit.Assert.assertNotNull;
+
+import org.alfresco.demoamp.DemoComponent;
+import org.alfresco.error.AlfrescoRuntimeException;
+import org.alfresco.model.ContentModel;
+import org.alfresco.repo.security.authentication.AuthenticationUtil;
+import org.alfresco.service.cmr.repository.ChildAssociationRef;
+import org.alfresco.service.cmr.repository.ContentReader;
+import org.alfresco.service.cmr.repository.NodeRef;
+import org.alfresco.service.cmr.repository.NodeService;
+import org.alfresco.service.cmr.repository.StoreRef;
+import org.alfresco.service.cmr.search.ResultSet;
+import org.alfresco.service.cmr.search.SearchService;
+import org.alfresco.service.cmr.security.PersonService;
+import org.alfresco.service.namespace.QName;
+import org.alfresco.util.ApplicationContextHelper;
+import org.apache.chemistry.opencmis.commons.impl.jaxb.GetContentStream;
+import org.apache.log4j.Logger;
+import org.docx4j.openpackaging.packages.WordprocessingMLPackage;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+
+import com.sun.star.comp.helper.Bootstrap;
+import com.sun.star.comp.helper.BootstrapException;
+import com.sun.star.text.XText;
+import com.sun.star.text.XTextDocument;
+import com.sun.star.uno.UnoRuntime;
+import com.sun.star.uno.XComponentContext;
+
+/**
+ * A simple class demonstrating how to run out-of-container tests 
+ * loading Alfresco application context. 
+ * 
+ * @author columbro
+ *
+ */
+public class DemoComponentTest {
+    
+    private static final String ADMIN_USER_NAME = "admin";
+
+    static Logger log = Logger.getLogger(DemoComponentTest.class);
+
+    protected static ApplicationContext applicationContext;
+    
+    protected static DemoComponent demoComponent;
+    
+    protected static NodeService nodeService;
+    
+    protected static SearchService searchService;
+    
+    protected static PersonService personService;
+    
+    @BeforeClass
+    public static void initAppContext()
+    {
+        // TODO: Make testing properly working without need for helpers
+        // TODO: Provide this in an SDK base class
+        ApplicationContextHelper.setUseLazyLoading(false);
+        ApplicationContextHelper.setNoAutoStart(true);
+        applicationContext = ApplicationContextHelper.getApplicationContext(new String[] { "classpath:alfresco/application-context.xml" });
+        demoComponent = (DemoComponent) applicationContext.getBean("changeme.exampleComponent");
+        nodeService = (NodeService) applicationContext.getBean("NodeService");
+        searchService = (SearchService) applicationContext.getBean("SearchService");
+        personService = (PersonService) applicationContext.getBean("PersonService");
+        
+        AuthenticationUtil.setFullyAuthenticatedUser(ADMIN_USER_NAME);
+        
+        
+        log.debug("Sample test logging: If you see this message, means your unit test logging is properly configured. Change it in test-log4j.properties");
+        log.debug("Sample test logging: Application Context properly loaded");
+    }
+    
+
+
+    @Test
+    public void testWiring() {
+        assertNotNull(demoComponent);
+    }
+    
+    @Test
+    public void testGetCompanyHome() {
+        NodeRef companyHome = demoComponent.getCompanyHome();
+        assertNotNull(companyHome);
+        String companyHomeName = (String) nodeService.getProperty(companyHome, ContentModel.PROP_NAME);
+        assertNotNull(companyHomeName);
+        assertEquals("Company Home", companyHomeName);
+    }
+    
+    @Test
+    public void Matts(){
+    	System.out.println("**************************************\n");
+    	
+//    	StoreRef storeRef = new StoreRef(StoreRef.PROTOCOL_WORKSPACE, "SpacesStore");
+//        ResultSet rs = searchService.query(storeRef, SearchService.LANGUAGE_LUCENE, "PATH:\"app:company_home/cm:test\"");
+//        
+//        
+//        NodeRef companyHomeNodeRef = null;
+//        String fileName = "";
+//        
+//        
+//        try
+//        {
+//            if (rs.length() == 0)
+//            {
+//                throw new AlfrescoRuntimeException("Didn't find Company Home");
+//            }
+//            companyHomeNodeRef = rs.getNodeRef(0);
+//            fileName = (String) nodeService.getProperty(companyHomeNodeRef, ContentModel.PROP_NAME);
+//            System.out.println(fileName);
+//            List<ChildAssociationRef> children = nodeService.getChildAssocs(companyHomeNodeRef);     
+//            
+//            System.out.println(children.size());
+//            
+//            for (ChildAssociationRef childAssoc : children) {
+//                NodeRef childNodeRef = childAssoc.getChildRef();
+//                fileName = (String) nodeService.getProperty(childNodeRef, ContentModel.PROP_NAME);
+//                System.out.println(fileName);
+//            }  
+//        }
+//        finally
+//        {
+//            rs.close();
+//        }
+
+    	
+
+    	/*
+    	
+    	StoreRef storeRef = new StoreRef(StoreRef.PROTOCOL_WORKSPACE, "SpacesStore");
+        ResultSet rs = searchService.query(storeRef, SearchService.LANGUAGE_LUCENE, "PATH:\"/app:company_home/app:guest_home\"");
+        NodeRef companyHomeNodeRef = null;
+        
+        System.out.println("length :" + rs.length());
+        String fileName="";
+                
+        try
+        {
+            if (rs.length() == 0)
+            {
+                throw new AlfrescoRuntimeException("Didn't find Company Home");
+            }
+            companyHomeNodeRef = rs.getNodeRef(0);
+            
+            List<ChildAssociationRef> children = nodeService.getChildAssocs(companyHomeNodeRef);
+            
+            System.out.println(children.size());
+            
+            for (ChildAssociationRef childAssoc : children) {
+                NodeRef childNodeRef = childAssoc.getChildRef();
+                fileName = (String) nodeService.getProperty(childNodeRef, ContentModel.PROP_NAME);
+                System.out.println(fileName);
+            }  
+        }
+        finally
+        {
+            rs.close();
+        }
+        
+
+         */
+    	
+    	
+    	//  	NodeRef companyHome = demoComponent.getCompanyHome();
+    	
+//    	nodeService.getChildByName(companyHome, ContentModel.PROP_NAME, "Name");
+/*    	QName s = new DemoComponentTest()
+    	nodeService.getChildByName(companyHome, "guest_home", "Name");
+    	
+    	String fileName = (String) nodeService.getProperty(companyHome, ContentModel.PROP_NAME);
+    	System.out.println("**************************************\n");
+    	System.out.println(fileName);
+
+    	
+  	
+    	 List<ChildAssociationRef> children = nodeService.getChildAssocs(companyHome);
+         for (ChildAssociationRef childAssoc : children) {
+             NodeRef childNodeRef = childAssoc.getChildRef();
+             fileName = (String) nodeService.getProperty(childNodeRef, ContentModel.PROP_NAME);
+             System.out.println(fileName);
+         }    	
+
+  
+         
+         StoreRef storeRef = new StoreRef(StoreRef.PROTOCOL_WORKSPACE, "SpacesStore");
+//         ResultSet rs = searchService.query(storeRef, SearchService.LANGUAGE_LUCENE, "PATH:\"/app:company_home/app:user_homes/sys:boris/cm:mypics\"");
+         
+         ResultSet rs = SearchService.query(storeRef, SearchService.LANGUAGE_XPATH, "/app:company_home/cm:guest_home");
+         
+         NodeRef companyHomeNodeRef = null;
+         try
+         {
+             if (rs.length() == 0)
+             {
+                 throw new AlfrescoRuntimeException("Didn't find Company Home");
+             }
+             companyHomeNodeRef = rs.getNodeRef(0);
+         }
+         finally
+         {
+             rs.close();
+         }         
+         
+         
+*/
+    	
+    	
+//    	NodeRef companyHomeNodeRef =  demoComponent.getCompanyHome();
+//    	
+//        StoreRef storeRef = new StoreRef(StoreRef.PROTOCOL_WORKSPACE,
+//                "SpacesStore");
+//
+//        //SearchService searchService = new SearchService();
+//		ResultSet rs = searchService.query(storeRef, SearchService.LANGUAGE_XPATH, "/app:company_home/app:guest_home");
+////		System.out.println(rs.length());
+//		
+//		for (int i = 0; i < rs.length(); i++) {
+//			 companyHomeNodeRef = rs.getNodeRef(i);
+//			 fileName = (String) nodeService.getProperty(companyHomeNodeRef, ContentModel.PROP_NAME);
+//			 System.out.println(fileName);
+//		}
+//		
+//		
+//        try {
+//            System.out.println("length :" + rs.length());
+//            if (rs.length() == 0) {
+////                 throw new Exception("Didn't find Company Home");
+//            } else {
+//                companyHomeNodeRef = rs.getNodeRef(0);
+//            }
+//        } finally {
+//            //rs.close();
+//        }   	
+//    	
+//        fileName = (String) nodeService.getProperty(companyHomeNodeRef, ContentModel.PROP_NAME);
+//        
+//        System.out.println(fileName);
+//        
+//        List<ChildAssociationRef> children = nodeService.getChildAssocs(companyHomeNodeRef);
+//        
+//        System.out.println(children.size());
+//        
+//        for (ChildAssociationRef childAssoc : children) {
+//        	System.out.println("XX\n");
+//            NodeRef childNodeRef = childAssoc.getChildRef();
+//            fileName = (String) nodeService.getProperty(childNodeRef, ContentModel.PROP_NAME);
+//            System.out.println(fileName);
+//        }    	        
+        
+    	
+         
+//    	WordprocessingMLPackage wordMLPackage = WordprocessingMLPackage.load(new java.io.File(inputfilepath));
+//    	WordprocessingMLPackage wordMLPackage = WordprocessingMLPackage.load();    	
+    }
+    
+    
+
+}
