@@ -156,6 +156,10 @@
         <action id="airwork.doclib.action.combineSelectedDocs" index="500"/>
       </actionGroup>
     </actionGroups>
+    <toolbar-actions>
+          <action id="airwork.doclib.action.combineSelectedDocs" index="500"/>
+       </toolbar-actions>
+    
   </config>
   <!-- Global folder picker config section -->
   <config condition="GlobalFolder" evaluator="string-compare">
@@ -289,6 +293,7 @@
       </form>   
       </forms>  
   </config>
+  
   <!-- display the merge docs association aspect data on cm:content items -->
   <config condition="cm:content" evaluator="node-type">
     <forms>

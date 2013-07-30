@@ -109,9 +109,18 @@
 
 
 
+            var rest_endpoint = "";
+            if (file.node.type !== "CM:folder"){
+                rest_endpoint = file.parent.nodeRef.replace("://","/");
+            }else{
+                rest_endpoint = file.jsNode.nodeRef.uri;
+            };
+
+            
+
             var docsUrls = YAHOO.lang.substitute("{stem}slingshot/doclib/doclist/cm:content/node/{nodeUri}", {
                 stem: Alfresco.constants.PROXY_URI,
-                nodeUri: file.jsNode.nodeRef.uri
+                nodeUri: rest_endpoint
             });
 
             //console.log(file.jsNode.nodeRef.uri);
@@ -145,6 +154,8 @@
                             successCallback: {
                                 fn: function ajax_success(response) {
                                     console.log(response);
+
+                                    console.log(file);
 
                                     var items = response.json.items;
                                     var nodes = [];
