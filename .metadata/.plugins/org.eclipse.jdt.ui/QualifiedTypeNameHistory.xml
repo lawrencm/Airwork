@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.alfresco.service.cmr.security.AuthenticationService"/>
+<fullyQualifiedTypeName name="org.json.JSONObject"/>
+<fullyQualifiedTypeName name="org.alfresco.web.ui.common.component.evaluator.BaseEvaluator"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="org.alfresco.web.evaluator.BaseEvaluator"/>
+</qualifiedTypeNameHistroy>

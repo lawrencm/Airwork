@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model xmlns="http://www.alfresco.org/model/dictionary/1.0" name="md:extensionModel">
+<model name="md:extensionModel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
     <description>Merge Docs Model</description>
     <author>Matt Lawrence</author>
     <version>1.0</version>
     <imports>
-        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
-        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+        <import prefix="d" uri="http://www.alfresco.org/model/dictionary/1.0"/>
+        <import prefix="cm" uri="http://www.alfresco.org/model/content/1.0"/>
     </imports>
     <namespaces>
-        <namespace uri="com.lawrencm.md" prefix="md"/>
+        <namespace prefix="md" uri="com.lawrencm.md"/>
     </namespaces>
     <data-types/>
     <constraints/>
@@ -31,20 +31,17 @@
                 </property>
             </properties>
             <associations>
-
-            	<association name="md:generateFrom">
-            	    <source>
-            	        <mandatory>false</mandatory>
-            	        <many>true</many>
-            	    </source>
-            	    <target>
-            	        <class>cm:content</class>
-            	        <mandatory>false</mandatory>
-            	        <many>true</many>
-            	    </target>
-            	</association>
-
-
+                <association name="md:generateFrom">
+                    <source>
+                        <mandatory>false</mandatory>
+                        <many>true</many>
+                    </source>
+                    <target>
+                        <class>cm:content</class>
+                        <mandatory>false</mandatory>
+                        <many>true</many>
+                    </target>
+                </association>
             </associations>
             <overrides/>
             <mandatory-aspects/>
@@ -68,12 +65,12 @@
                 <association name="md:createdFrom">
                     <source>
                         <mandatory>false</mandatory>
-                        <many>false</many>
+                        <many>true</many>
                     </source>
                     <target>
                         <class>cm:content</class>
-                        <mandatory enforced="false">true</mandatory>
-                        <many>false</many>
+                        <mandatory>false</mandatory>
+                        <many>true</many>
                     </target>
                 </association>
             </associations>

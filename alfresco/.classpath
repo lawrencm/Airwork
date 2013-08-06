@@ -37,5 +37,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/Users/lawrencm/Documents/Projects/Airwork/alfresco/target/alfresco-war/WEB-INF/lib/alfresco-web-client-4.2.c.jar"/>
+	<classpathentry kind="lib" path="/Users/lawrencm/Documents/Projects/Airwork/alfresco/target/alfresco-war/WEB-INF/lib/alfresco-web-framework-commons-4.2.c.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.alfresco.org/model/dictionary/1.0" name="md:extensionModel">
+    <description>Merge Docs Model</description>
+    <author>Matt Lawrence</author>
+    <version>1.0</version>
+    <imports>
+        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+    </imports>
+    <namespaces>
+        <namespace uri="com.lawrencm.md" prefix="md"/>
+    </namespaces>
+    <data-types/>
+    <constraints/>
+    <types>
+        <type name="md:compoundDocScaffold">
+            <title>Compound Document Scaffold</title>
+            <parent>cm:content</parent>
+            <properties>
+                <property name="md:name">
+                    <title>Name</title>
+                    <description>The name of the document you will create</description>
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                    <default>Generated Manual</default>
+                    <index enabled="true">
+                        <atomic>false</atomic>
+                        <stored>false</stored>
+                        <tokenised>TRUE</tokenised>
+                    </index>
+                </property>
+            </properties>
+            <associations>
+                <association name="md:generateFrom">
+                    <source>
+                        <mandatory>false</mandatory>
+                        <many>true</many>
+                    </source>
+                    <target>
+                        <class>cm:content</class>
+                        <mandatory enforced="false">false</mandatory>
+                        <many>true</many>
+                    </target>
+                </association>
+            </associations>
+            <overrides/>
+            <mandatory-aspects/>
+        </type>
+        <type name="md:compondDocument">
+            <title>Compound Document</title>
+            <parent>cm:content</parent>
+            <properties/>
+            <associations/>
+            <overrides/>
+            <mandatory-aspects>
+                <aspect>md:compoundManual</aspect>
+            </mandatory-aspects>
+        </type>
+    </types>
+    <aspects>
+        <aspect name="md:compoundManual">
+            <title>Compound Manual</title>
+            <properties/>
+            <associations>
+                <association name="md:createdFrom">
+                    <source>
+                        <mandatory>false</mandatory>
+                        <many>true</many>
+                    </source>
+                    <target>
+                        <class>cm:content</class>
+                        <mandatory enforced="false">false</mandatory>
+                        <many>true</many>
+                    </target>
+                </association>
+            </associations>
+            <overrides/>
+            <mandatory-aspects/>
+        </aspect>
+    </aspects>
+</model>

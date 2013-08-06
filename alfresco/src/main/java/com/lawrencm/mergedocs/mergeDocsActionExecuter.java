@@ -22,6 +22,7 @@ import org.alfresco.service.cmr.repository.ContentService;
 import org.alfresco.service.cmr.repository.ContentWriter;
 import org.alfresco.service.cmr.repository.NodeRef;
 import org.alfresco.service.cmr.repository.NodeService;
+import org.alfresco.service.cmr.security.AuthenticationService;
 import org.alfresco.service.namespace.QName;
 import org.apache.log4j.Logger;
 import org.docx4j.fonts.IdentityPlusMapper;
@@ -55,6 +56,7 @@ public class mergeDocsActionExecuter extends ActionExecuterAbstractBase {
 	private NodeService nodeService;
 	private ContentService contentService;
 	private FileFolderService fileFolderService;
+	private AuthenticationService authenticationService;
 	// private OpenOfficeConnection connection;
 	// private MimetypeService mimetypeService;
 
@@ -89,6 +91,11 @@ public class mergeDocsActionExecuter extends ActionExecuterAbstractBase {
 		this.contentService = contentService;
 	}
 
+	public void setAuthenticationService(AuthenticationService authenticationService) {
+		this.authenticationService = authenticationService;
+	}
+
+	
 	/*
 	 * @param mimetypeService the mimetype service. Set this if required.
 	 */
@@ -102,7 +109,11 @@ public class mergeDocsActionExecuter extends ActionExecuterAbstractBase {
 
 	@Override
 	protected void executeImpl(Action action, NodeRef nodeRef) {
-		ArrayList<NodeRef> nodesToMerge = (ArrayList<NodeRef>) action.getParameterValue("nodesToMerge");
+		ArrayList<NodeRef> nodesToMerge = (ArrayList<NodeRef>) action
+				.getParameterValue("nodesToMerge");
+		String newNodeName = (String) action.getParameterValue("documentName");
+		String newNodeTitle = (String) action.getParameterValue("documentTitle");
+		// action.getParameterValue("documentName");
 
 		// Create list of docx packages to merge
 		// List<WordprocessingMLPackage> wmlPkgList = new
@@ -116,15 +127,18 @@ public class mergeDocsActionExecuter extends ActionExecuterAbstractBase {
 			// String filename = BASE_DIR + sourceDocxNames[i] ;
 			NodeRef nr = nodesToMerge.get(i);
 
-			String file_name = (String) nodeService.getProperty(nr, ContentModel.PROP_NAME);
+			String file_name = (String) nodeService.getProperty(nr,
+					ContentModel.PROP_NAME);
 
 			System.out.println("Loading " + file_name);
 
-			ContentReader reader = contentService.getReader(nr, ContentModel.PROP_CONTENT);
+			ContentReader reader = contentService.getReader(nr,
+					ContentModel.PROP_CONTENT);
 			InputStream originalInputStream = reader.getContentInputStream();
 
 			try {
-				BlockRange block = new BlockRange(WordprocessingMLPackage.load(originalInputStream));
+				BlockRange block = new BlockRange(
+						WordprocessingMLPackage.load(originalInputStream));
 				blockRanges.add(block);
 
 				// blockRanges.add(block);
@@ -157,18 +171,20 @@ public class mergeDocsActionExecuter extends ActionExecuterAbstractBase {
 			file = File.createTempFile("wordexport-", ".docx");
 
 			DocumentBuilder documentBuilder = new DocumentBuilder();
-			documentBuilder.setRetainMacros(blockRanges.get(1));
+			// documentBuilder.setRetainMacros(blockRanges.get(1));
 
 			//
-			WordprocessingMLPackage output = documentBuilder.buildOpenDocument(blockRanges);
+			WordprocessingMLPackage output = documentBuilder
+					.buildOpenDocument(blockRanges);
 			// set up for TOC
-			MainDocumentPart documentPart = output.getMainDocumentPart();
-			org.docx4j.wml.Document wmlDocumentEl = (org.docx4j.wml.Document) documentPart.getJaxbElement();
-			Body body = wmlDocumentEl.getBody();
-			ObjectFactory factory = Context.getWmlObjectFactory();
-			
-			CTView view = Context.getWmlObjectFactory().createCTView();  
-			view.setVal(STView.PRINT);
+			// MainDocumentPart documentPart = output.getMainDocumentPart();
+			// org.docx4j.wml.Document wmlDocumentEl = (org.docx4j.wml.Document)
+			// documentPart.getJaxbElement();
+			// Body body = wmlDocumentEl.getBody();
+			// ObjectFactory factory = Context.getWmlObjectFactory();
+			//
+			// CTView view = Context.getWmlObjectFactory().createCTView();
+			// view.setVal(STView.PRINT);
 			/*
 			 * Create the following:
 			 * 
@@ -177,64 +193,83 @@ public class mergeDocsActionExecuter extends ActionExecuterAbstractBase {
 			 * u \h</w:instrText> </w:r> <w:r/> <w:r> <w:fldChar
 			 * w:fldCharType="end"/> </w:r> </w:p>
 			 */
-			
-//			w:updateSettings w:val="true"
 
-			P paragraphForTOC = factory.createP();
-			R r = factory.createR();
+			// w:updateSettings w:val="true"
 
-			FldChar fldchar = factory.createFldChar();
-			fldchar.setFldCharType(STFldCharType.BEGIN);
-			fldchar.setDirty(true);
-			r.getContent().add(getWrappedFldChar(fldchar));
-			paragraphForTOC.getContent().add(r);
-
-			CTSettings us = Context.getWmlObjectFactory().createCTSettings();
-			
-			us.setUpdateFields(null);
-			
-			factory.createSettings(us);
-			
-			R r1 = factory.createR();
-			Text txt = new Text();
-			txt.setSpace("preserve");
-			txt.setValue("TOC \\o \"1-3\" \\h \\z \\u \\h");
-			r.getContent().add(factory.createRInstrText(txt));
-			paragraphForTOC.getContent().add(r1);
-
-			FldChar fldcharend = factory.createFldChar();
-			fldcharend.setFldCharType(STFldCharType.END);
-			R r2 = factory.createR();
-			r2.getContent().add(getWrappedFldChar(fldcharend));
-			paragraphForTOC.getContent().add(r2);
-
-			body.getContent().add(paragraphForTOC);
+			// P paragraphForTOC = factory.createP();
+			// R r = factory.createR();
+			//
+			// FldChar fldchar = factory.createFldChar();
+			// fldchar.setFldCharType(STFldCharType.BEGIN);
+			// fldchar.setDirty(true);
+			// r.getContent().add(getWrappedFldChar(fldchar));
+			// paragraphForTOC.getContent().add(r);
+			//
+			// CTSettings us = Context.getWmlObjectFactory().createCTSettings();
+			//
+			// us.setUpdateFields(null);
+			//
+			// factory.createSettings(us);
+			//
+			// R r1 = factory.createR();
+			// Text txt = new Text();
+			// txt.setSpace("preserve");
+			// txt.setValue("TOC \\o \"1-3\" \\h \\z \\u \\h");
+			// r.getContent().add(factory.createRInstrText(txt));
+			// paragraphForTOC.getContent().add(r1);
+			//
+			// FldChar fldcharend = factory.createFldChar();
+			// fldcharend.setFldCharType(STFldCharType.END);
+			// R r2 = factory.createR();
+			// r2.getContent().add(getWrappedFldChar(fldcharend));
+			// paragraphForTOC.getContent().add(r2);
+			//
+			// body.getContent().add(paragraphForTOC);
 
 			// output.set
 
 			SaveToZipFile saver = new SaveToZipFile(output);
 			saver.save(file);
 
-			QName contentQName = QName.createQName("{http://www.alfresco.org/model/content/1.0}content");
+			QName contentQName = QName
+					.createQName("{com.lawrencm.md}compondDocument");
 
-			FileInfo docInfo = fileFolderService.create(nodeRef, "final.docx", contentQName);
+			FileInfo docInfo = fileFolderService.create(nodeRef, newNodeName,
+					contentQName);
 			NodeRef docRef = docInfo.getNodeRef();
+			QName contentQTitle = QName
+					.createQName("{http://www.alfresco.org/model/content/1.0}title");
+			QName mdQAssoc = QName.createQName("{com.lawrencm.md}createdFrom");
+			QName contentQAuthor = QName
+					.createQName("{http://www.alfresco.org/model/content/1.0}author");
+			
+			nodeService.setProperty(docRef, contentQTitle, newNodeTitle);
+			
+			String userName = authenticationService.getCurrentUserName();
+			nodeService.setProperty(docRef, contentQAuthor, userName);
+			
+			nodeService.setAssociations(docRef, mdQAssoc, nodesToMerge);
 
-			ContentWriter writer = this.contentService.getWriter(docRef, ContentModel.PROP_CONTENT, true);
+
+			
+			
+			ContentWriter writer = this.contentService.getWriter(docRef,
+					ContentModel.PROP_CONTENT, true);
 			// File file = new File("/tmp/images/maddie1.jpg");
-//			writer.
+			// writer.
 			writer.setMimetype("application/vnd.openxmlformats-officedocument.wordprocessingml.document");
 
-			//output.setFontMapper(new IdentityPlusMapper());
+			// output.setFontMapper(new IdentityPlusMapper());
 			// Set up converter
-//			org.docx4j.convert.out.pdf.PdfConversion c = new org.docx4j.convert.out.pdf.viaXSLFO.Conversion(output);
-//			// Write to output stream
-//			OutputStream os = new java.io.FileOutputStream("/tmp/matt" + ".pdf"); 
-//			c.output(os, null);
-			
-			
+			// org.docx4j.convert.out.pdf.PdfConversion c = new
+			// org.docx4j.convert.out.pdf.viaXSLFO.Conversion(output);
+			// // Write to output stream
+			// OutputStream os = new java.io.FileOutputStream("/tmp/matt" +
+			// ".pdf");
+			// c.output(os, null);
+
 			writer.putContent(file);
-			
+
 			file.delete();
 
 		} catch (IOException e) {
@@ -338,7 +373,8 @@ public class mergeDocsActionExecuter extends ActionExecuterAbstractBase {
 
 	public static JAXBElement getWrappedFldChar(FldChar fldchar) {
 
-		return new JAXBElement(new javax.xml.namespace.QName(Namespaces.NS_WORD12, "fldChar"), FldChar.class, fldchar);
+		return new JAXBElement(new javax.xml.namespace.QName(
+				Namespaces.NS_WORD12, "fldChar"), FldChar.class, fldchar);
 
 	}
 

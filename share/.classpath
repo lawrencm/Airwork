@@ -37,5 +37,11 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/Users/lawrencm/Documents/Projects/Airwork/share/target/share-war/WEB-INF/lib/alfresco-core-4.2.c.jar"/>
+	<classpathentry kind="lib" path="/Users/lawrencm/Documents/Projects/Airwork/share/target/share-war/WEB-INF/lib/alfresco-jlan-embed-4.2.c.jar"/>
+	<classpathentry kind="lib" path="/Users/lawrencm/Documents/Projects/Airwork/share/target/share-war/WEB-INF/lib/alfresco-opencmis-extension-0.3.jar"/>
+	<classpathentry kind="lib" path="/Users/lawrencm/Documents/Projects/Airwork/share/target/share-war/WEB-INF/lib/alfresco-share-4.2.c.jar"/>
+	<classpathentry kind="lib" path="/Users/lawrencm/Documents/Projects/Airwork/share/target/share-war/WEB-INF/lib/alfresco-web-framework-commons-4.2.c.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/alfresco"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

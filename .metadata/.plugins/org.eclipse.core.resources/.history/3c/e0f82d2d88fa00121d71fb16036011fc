@@ -1,0 +1,5 @@
+package com.lawrencm.mergedocs;
+
+public class updateMergeRequiredEvaluator extends BaseEvaluator{
+
+}

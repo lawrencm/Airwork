@@ -1,0 +1,10 @@
+package com.lawrencm.mergedocs;
+
+
+import org.alfresco.web.ui.common.component.evaluator.BaseEvaluator;
+import org.json.simple.JSONObject;
+
+public class updateMergeRequiredEvaluator extends BaseEvaluator {
+
+
+}

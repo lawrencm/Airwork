@@ -1,0 +1,61 @@
+//package com.lawrencm.mergedocs;
+//
+//import org.alfresco.web.evaluator.BaseEvaluator;
+//import org.json.simple.JSONObject;
+//
+//public class updateMergeRequiredEvaluator extends BaseEvaluator {
+//
+//	private final static String NODEREF = "nodeRef";
+//	private final static String COMPOUND_TYPE = "md:compondDocument";
+//	private final static String ASSOCIATION_NAME = "md:createdFrom";
+//	// private final static String AGREEMENT_STATUS = "clm:AgreementStatus";
+//	// private final static String AGREEMENT_STAGE = "clm:AgreementStage";
+//	private final static String NODE = "node";
+//	private final static String PROPERTIES = "properties";
+//	private final static String STAGE_BEING_DRAFTED = "Being Drafted";
+//	private final static String STATUS_DRAFT = "Draft";
+//
+//	@Override
+//	public boolean evaluate(JSONObject jsonObject) {
+//		// TODO Auto-generated method stub
+//
+//		boolean eval = false;
+//		// String sAgreementStage = null;
+//		// String sAgreementStatus = null;
+//		String sCreatedFrom = null;
+//
+//		String nodeType = getNodeType(jsonObject);
+//
+//		JSONObject node = (JSONObject) jsonObject.get(NODE);
+//
+//		// Process only when we found clm:Draft kind of folder
+//		if (nodeType.equalsIgnoreCase(COMPOUND_TYPE)) {
+//
+//			String sNodeRef = (String) jsonObject.get(NODEREF);
+//			if (sNodeRef != null) {
+//				JSONObject properties = (JSONObject) node.get(PROPERTIES);
+//				if (properties != null) {
+//					sCreatedFrom = (String)properties.get(ASSOCIATION_NAME);
+//					
+//					System.out.println(jsonObject);
+//					
+//					System.out.println(sCreatedFrom);
+//					
+//					// sAgreementStage = (String)
+//					// properties.get(AGREEMENT_STAGE);
+//					// sAgreementStatus = (String)
+//					// properties.get(AGREEMENT_STATUS);
+//
+//					// Enable link only stage=Being Drafted and status=Draft
+//					// if (sAgreementStage.equalsIgnoreCase(STAGE_BEING_DRAFTED)
+//					// && sAgreementStatus.equalsIgnoreCase(STATUS_DRAFT)) {
+//					// eval = true;
+//					// }
+//				}
+//			}
+//
+//		}
+//		return eval;
+//	}
+//
+//}

@@ -1,0 +1,38 @@
+package com.lawrencm.mergedocs;
+
+
+import org.alfresco.web.evaluator.BaseEvaluator; 
+import org.json.simple.JSONObject;
+
+public class updateMergeRequiredEvaluator extends BaseEvaluator {
+
+	@Override
+	public boolean evaluate(JSONObject jsonObject) {
+
+		boolean eval = false;
+		// String sAgreementStage = null;
+		// String sAgreementStatus = null;
+		//
+		// String nodeType = getNodeType(jsonObject);
+		// JSONObject node = (JSONObject) jsonObject.get(NODE);
+		// // Process only when we found clm:Draft kind of folder
+		// if (nodeType.equalsIgnoreCase(DRAFT_TYPE)) {
+		// String sNodeRef = (String) jsonObject.get(NODEREF);
+		// if (sNodeRef != null) {
+		// JSONObject properties = (JSONObject) node.get(PROPERTIES);
+		// if (properties != null) {
+		// sAgreementStage = (String) properties.get(AGREEMENT_STAGE);
+		// sAgreementStatus = (String) properties.get(AGREEMENT_STATUS);
+		//
+		// // Enable link only stage=Being Drafted and status=Draft
+		// if (sAgreementStage.equalsIgnoreCase(STAGE_BEING_DRAFTED) &&
+		// sAgreementStatus.equalsIgnoreCase(STATUS_DRAFT)) {
+		// eval = true;
+		// }
+		// }
+		// }
+
+		// }
+		return eval;
+	}
+}

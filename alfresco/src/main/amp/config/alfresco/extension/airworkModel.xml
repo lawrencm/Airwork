@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="aw:airworkModel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+    <description>Airwork Model</description>
+    <author>Matt Lawrence</author>
+    <version>1.0</version>
+    <imports>
+        <!-- Import Alfresco Dictionary Definitions -->
+        <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+        <!-- Import Alfresco Content Domain Model Definitions -->
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+        <!-- Import Alfresco Datalist Domain Model Definitions -->
+        <import uri="http://www.alfresco.org/model/datalist/1.0" prefix="dl"/>    </imports>
+    <namespaces>
+        <namespace prefix="aw" uri="com.lawrencm.airwork"/>
+    </namespaces>
+    <data-types/>
+    <constraints/>
+    <types>
+        <!-- base awfolder to derive others of -->
+        <type name="aw:folder">
+            <title>Airwork Folder</title>
+            <parent>cm:folder</parent>
+        </type>
+
+        <type name="aw:customerfolder">
+            <title>Airwork customer folder</title>
+            <parent>aw:folder</parent>
+            <mandatory-aspects>
+                <aspect>aw:customerClassification</aspect>
+            </mandatory-aspects>
+        </type>
+        
+        <type name="aw:contractfolder">
+            <title>Airwork contract folder</title>
+            <parent>aw:folder</parent>
+            <mandatory-aspects>
+                <aspect>aw:customerClassification</aspect>
+                <aspect>aw:contractClassification</aspect>
+            </mandatory-aspects>
+        </type>
+        
+        <type name="aw:contract">
+            <title>Airwork contract document</title>
+            <parent>aw:doc</parent>
+            <associations>
+                <association name="aw:clientFolder">
+                    <title>Client Folder</title>
+                    <source>
+                        <mandatory>false</mandatory>
+                        <many>true</many>
+                    </source>
+                    <target>
+                        <class>aw:customerfolder</class>
+                        <mandatory>false</mandatory>
+                        <many>true</many>￼</target>
+                </association>
+            </associations>
+            <mandatory-aspects>
+                <aspect>aw:customerClassification</aspect>
+                <aspect>aw:contractClassification</aspect>
+            </mandatory-aspects>
+        </type>
+        
+        <type name="aw:doc">
+            <title>Airwork Document</title>
+            <parent>cm:content</parent>
+            <associations>
+                <association name="aw:relatedDocuments">
+                    <title>Related Documents</title>
+                    <source>
+                        <mandatory>false</mandatory>
+                        <many>true</many>
+                    </source>
+                    <target>
+                        <class>aw:doc</class>
+                        <mandatory>false</mandatory>
+                        <many>true</many>￼</target>
+                </association>
+            </associations>
+            <mandatory-aspects>
+                <aspect>cm:generalclassifiable</aspect>
+            </mandatory-aspects>
+        </type>
+
+
+        <type name="aw:requirement">
+           <title>Requirement</title>
+           <parent>dl:dataListItem</parent>
+           <properties>
+        
+              <property name="aw:descrption">
+                 <title>Description</title>
+                 <type>d:text</type>
+              </property>
+              <property name="aw:priority">
+                 <title>Priority</title>
+                 <type>d:text</type>
+              </property>
+           </properties>
+           <mandatory-aspects>
+              <aspect>cm:titled</aspect>
+              <aspect>dl:dataListItemId</aspect>
+           </mandatory-aspects>
+        </type>        
+
+    </types>
+    <aspects>
+        
+        <aspect name="aw:contractClassification">
+            <title>Contract Information</title>
+            <properties>
+                <property name="aw:contractNumber">
+                    <title>Contract Number</title>
+                    <type>d:text</type>
+                    <mandatory enforced="false">true</mandatory>
+                    <multiple>true</multiple>
+                </property>
+                <property name="aw:contractName">
+                    <title>Contract Name</title>
+                    <type>d:text</type>
+                </property>
+            </properties>
+        </aspect>
+
+        <aspect name="aw:customerClassification">
+            <title>Customer Information</title>
+            <properties>
+                <property name="aw:customerReference">
+                    <title>Customer Reference</title>
+                    <type>d:text</type>
+                    <mandatory enforced="false">true</mandatory>
+                    <multiple>true</multiple>
+                </property>
+                <property name="aw:customerName">
+                    <title>Customer Name</title>
+                    <type>d:text</type>
+                </property>
+            </properties>
+        </aspect>
+
+    </aspects>
+</model>

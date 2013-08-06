@@ -13,6 +13,21 @@
       <client-debug-autologging>false</client-debug-autologging>
     </flags>
   </config>
+
+  <config evaluator="string-compare" condition="Advanced Search">
+     <advanced-search>
+        <content-types>
+           <type name="aw:contract" />
+           <type name="aw:contractFolder" />
+        </content-types>
+        <custom-properties>
+           <meta-data aspect="contractClassification" property="aw:contractNumber" />
+           <meta-data aspect="contractClassification" property="aw:contractName" />
+        </custom-properties>
+     </advanced-search>
+  </config>
+
+
   <config condition="WebFramework" evaluator="string-compare">
     <web-framework>
       <!-- SpringSurf Autowire Runtime Settings -->
@@ -43,7 +58,7 @@
     </share-urls>
   </config>
   <!-- Document Library config section -->
-  <config condition="DocumentLibrary" evaluator="string-compare" replace="true">
+  <config condition="DocumentLibrary" evaluator="string-compare">
     <tree>
       <!--
             Whether the folder Tree component should enumerate child folders or not.
@@ -64,21 +79,8 @@
     <aspects>
       <!-- Aspects that a user can see -->
       <visible>
-        <aspect name="cm:generalclassifiable"/>
-        <aspect name="cm:complianceable"/>
-        <aspect name="cm:dublincore"/>
-        <aspect name="cm:effectivity"/>
-        <aspect name="cm:summarizable"/>
-        <aspect name="cm:versionable"/>
-        <aspect name="cm:templatable"/>
-        <aspect name="cm:emailed"/>
-        <aspect name="emailserver:aliasable"/>
-        <aspect name="cm:taggable"/>
-        <aspect name="app:inlineeditable"/>
-        <aspect name="gd:googleEditable"/>
-        <aspect name="cm:geographic"/>
-        <aspect name="exif:exif"/>
-        <aspect name="md:mergeDocsData"/>
+        <aspect name="aw:customerClassification"/>
+        <aspect name="aw:contractClassification"/>
       </visible>
       <!-- Aspects that a user can add. Same as "visible" if left empty -->
       <addable/>
@@ -93,8 +95,30 @@
             cm_mysubtype=My SubType
       -->
     <types>
-      <type name="cm:content"/>
-      <type name="cm:folder"/>
+        <type name="cm:folder">
+          <subtype name="aw:folder"/>
+          <subtype name="aw:customerfolder"/>
+          <subtype name="aw:contractfolder"/>
+        </type>
+        <type name="aw:folder">
+          <subtype name="cm:folder"/>
+          <subtype name="aw:customerfolder"/>
+        </type>
+        <type name="aw:customerfolder">
+          <subtype name="cm:folder"/>
+          <subtype name="aw:folder"/>
+        </type>
+        <type name="aw:contractfolder">
+          <subtype name="cm:folder"/>
+          <subtype name="aw:folder"/>
+        </type>
+        <type name="cm:content">
+          <subtype name="aw:doc"/>
+          <subtype name="aw:contract"/>
+        </type>
+        <type name="aw:doc">
+          <subtype name="aw:contract"/>
+        </type>
     </types>
     <!--
          If set, will present a WebDAV link for the current item on the Document and Folder details pages.
@@ -135,7 +159,7 @@
   <!-- Custom DocLibActions config section -->
   <config condition="DocLibActions" evaluator="string-compare">
     <actions>
-      <action icon="email" id="airwork.doclib.action.combineSelectedDocs" label="Create a compound document" type="javascript">
+      <action  id="airwork.doclib.action.combineSelectedDocs" label="Create a compound document" type="javascript" icon="document-merge" >
         <param name="label">actions.airwork.combineSelectedDocs</param>
         <param name="function">onActionCombineSelectedDocs</param>
         <param name="successMessage">mergedocs.combinedocs.success</param>
@@ -144,23 +168,41 @@
     </actions>
     <actionGroups>
       <actionGroup id="folder-browse">
-        <action id="airwork.doclib.action.combineSelectedDocs" index="500"/>
+        <action id="airwork.doclib.action.combineSelectedDocs" index="500" label="Merge the docx file in this folder"/>
       </actionGroup>
       <actionGroup id="folder-details">
-        <action id="airwork.doclib.action.combineSelectedDocs" index="500"/>
+        <action id="airwork.doclib.action.combineSelectedDocs" index="500" label="Merge the docx file in this folder"/>
       </actionGroup>
-      <actionGroup id="document-browse">
+      <!-- <actionGroup id="document-browse">
         <action id="airwork.doclib.action.combineSelectedDocs" index="500"/>
       </actionGroup>
       <actionGroup id="document-details">
         <action id="airwork.doclib.action.combineSelectedDocs" index="500"/>
-      </actionGroup>
-    </actionGroups>
-    <toolbar-actions>
-          <action id="airwork.doclib.action.combineSelectedDocs" index="500"/>
-       </toolbar-actions>
-    
+      </actionGroup>-->
+    </actionGroups> 
   </config>
+
+  <config evaluator="string-compare" condition="DocumentLibrary">
+      <toolbar-actions>
+          <action type="action-link" id="onActionCopyTo" label="menu.selected-items.copy" />
+          <action type="action-link" id="onActionMoveTo" permission="Delete" label="menu.selected-items.move" />
+          <action type="action-link" id="onActionDelete" permission="Delete" label="menu.selected-items.delete" />
+          <action type="action-link" id="onActionAssignWorkflow" asset="document" label="menu.selected-items.assign-workflow" />
+          <action type="action-link" id="onActionManagePermissions" permission="ChangePermissions" label="menu.selected-items.manage-permissions" />
+          <action type="action-link" id="onActionCombineSelectedDocs" permission="Write" label="Merge Selected Documents" />
+
+      </toolbar-actions>
+
+<!--     <indicator id="needsUpdating" index="10">
+       <evaluator>evaluator.doclib.action.needsUpdate</evaluator>
+       <labelParam index="0">{jsNode.properties.owner.displayName}</labelParam>
+       <labelParam index="1">{jsNode.properties.owner.userName}</labelParam>
+       <override>locked</override>
+    </indicator> -->
+
+  </config>
+
+
   <!-- Global folder picker config section -->
   <config condition="GlobalFolder" evaluator="string-compare">
     <siteTree>
@@ -223,61 +265,12 @@
   <config condition="DocLibCustom" evaluator="string-compare">
     <dependencies>
       <js src="scripts/components/documentlibrary/combine-docs-action.js"/>
+      <css src="css/combine-docs-action.css"/>
+
     </dependencies>
     <dependencies/>
   </config>
-  <!-- <config evaluator="string-compare" condition="DocLibActions"><actions><action id="airwork.doclib.action.combineDocs"
-                 icon="email"
-                 type="javascript"
-                 label="mergedocs.combinedocs"><param name="label">actions.airwork.combinedocs</param><param name="function">onActionCombineDocs</param>-->
-  <!-- <param name="function">onActionFormDialog</param>-->
-  <!--          <param name="itemKind">action</param><param name="itemId">mergedocs</param>-->
-  <!--            <param name="successMessage">mergedocs.combinedocs.success</param><param name="failureMessage">mergedocs.combinedocs.failure</param><evaluator negate="true">mycompany.evaluator.doclib.action.isEmailed 
-            </evaluator></action></actions><actionGroups><actionGroup id="folder-browse"><action index="400" id="airwork.doclib.action.combineDocs" /></actionGroup><actionGroup id="folder-details"><action index="400" id="airwork.doclib.action.combineDocs" /></actionGroup><actionGroup id="document-browse"><action index="400" id="airwork.doclib.action.combineDocs" /></actionGroup><actionGroup id="document-details"><action index="400" id="airwork.doclib.action.combineDocs" /></actionGroup></actionGroups></config>-->
-  <!-- Send As Email Action Form -->
- <!--  <config condition="cm:folder" evaluator="node-type">
-    <forms>
-      <form id="mergedocxform">
-        <field-visibility>
-          <show force="false" id="md:name"/>
-          <show force="false" id="md:generateFrom"/>
-        </field-visibility>
-        <edit-form template="../documentlibrary/forms/doclib-simple-metadata.ftl"/>
-        <appearance>
-          <field id="md:name" mandatory="false" read-only="false"/>
-          <set appearance="bordered-panel" id="bordered-panel"/>
-          <field id="md:generateFrom" label="Generated From" mandatory="false" read-only="false" set="bordered-panel">
 
-          </field>
-        </appearance>
-      </form>
-      <form id="mergedocxformall">
-        <field-visibility>
-          <show force="false" id="md:name"/>
-        </field-visibility>
-        <appearance>
-          <field id="md:name" mandatory="false" read-only="false"/>
-        </appearance>
-      </form>      
-    </forms>
-  </config>
-  <config condition="md:compoundDocScaffold" evaluator="node-type" replace="true">
-    <forms>
-      <form>
-        <field-visibility>
-          <show force="false" id="md:name"/>
-          <show force="false" id="md:generateFrom"/>
-        </field-visibility>
-        <appearance>
-          <field id="md:name" mandatory="false" read-only="false" label="name 1"/>
-          <set appearance="bordered-panel" id="bordered-panel"/>
-          <field id="md:generateFrom" label="Generated From" mandatory="false" read-only="false" set="bordered-panel">
-          </field>
-        </appearance>
-      </form> 
-     
-    </forms>
-  </config>-->
   <config condition="md:compoundDocScaffold" evaluator="model-type" replace="true">
     <forms>
       <form>
@@ -293,6 +286,156 @@
       </form>   
       </forms>  
   </config>
+
+  <config condition="md:compondDocument" evaluator="node-type" replace="true">
+    <forms>
+      <form>
+        <field-visibility>
+                         <show id="cm:name" />
+               <show id="cm:title" force="true" />
+               <show id="cm:description" force="true" />
+               <show id="mimetype" />
+               <show id="cm:author" force="true" />
+               <show id="size" for-mode="view" />
+               <show id="cm:creator" for-mode="view" />
+               <show id="cm:created" for-mode="view" />
+               <show id="cm:modifier" for-mode="view" />
+               <show id="cm:modified" for-mode="view" />
+               
+               <!-- tags and categories -->
+               <show id="cm:taggable" for-mode="edit" force="true" />
+               <show id="cm:categories" />
+               
+               <!-- cm:dublincore aspect -->
+               <show id="cm:publisher"/>
+               <show id="cm:contributor"/>
+               <show id="cm:type"/>
+               <show id="cm:identifier"/>
+               <show id="cm:dcsource"/>
+               <show id="cm:coverage"/>
+               <show id="cm:rights"/>
+               <show id="cm:subject"/>
+               
+               <!-- cm:complianceable aspect -->
+               <show id="cm:removeAfter" />
+               
+               <!-- cm:effectivity aspect -->
+               <show id="cm:from"/>
+               <show id="cm:to"/>
+               
+               <!--  cm:summarizable aspect -->
+               <show id="cm:summary" />
+               
+               <!-- cm:translatable aspect -->
+               <show id="cm:translations" />
+               
+               <!-- cm:localizable aspect -->
+               <show id="cm:locale" />
+               
+               <!-- cm:ownable aspect -->
+               <show id="cm:owner" />
+               
+               <!-- cm:attachable aspect -->
+               <show id="cm:attachments" />
+               
+               <!-- cm:emailed aspect -->
+               <show id="cm:originator" />
+               <show id="cm:addressee" />
+               <show id="cm:addressees" />
+               <show id="cm:sentdate" />
+               <show id="cm:subjectline" />
+               
+               <!-- exif:exif aspect -->
+               <show id="exif:dateTimeOriginal" />
+               <show id="exif:pixelXDimension" />
+               <show id="exif:pixelYDimension" />
+               <show id="exif:exposureTime" />
+               <show id="exif:fNumber" />
+               <show id="exif:flash" />
+               <show id="exif:focalLength" />
+               <show id="exif:isoSpeedRatings" />
+               <show id="exif:manufacturer" />
+               <show id="exif:model" />
+               <show id="exif:software" />
+               <show id="exif:orientation" />
+               <show id="exif:xResolution" />
+               <show id="exif:yResolution" />
+               <show id="exif:resolutionUnit" />
+
+               <!-- audio:audio aspect -->
+               <show id="audio:album" />
+               <show id="audio:artist" />
+               <show id="audio:composer" />
+               <show id="audio:engineer" />
+               <show id="audio:genre" />
+               <show id="audio:trackNumber" />
+               <show id="audio:releaseDate" />
+               <show id="audio:sampleRate" />
+               <show id="audio:sampleType" />
+               <show id="audio:channelType" />
+               <show id="audio:compressor" />
+               
+               <!-- cm:indexControl aspect -->
+               <show id="cm:isIndexed" />
+               <show id="cm:isContentIndexed" />
+               
+               <!-- cm:geographic aspect -->
+               <show id="cm:latitude" />
+               <show id="cm:longitude" />
+
+
+
+          <show force="false" id="md:createdFrom"/>
+        </field-visibility>
+        <appearance>
+          <!-- <field id="md:name" mandatory="false" read-only="false" label="Name of the new document"/> -->
+ <field id="cm:name">
+                 <control>
+                    <control-param name="maxLength">255</control-param>
+                 </control>
+               </field>
+               <field id="cm:title">
+                  <control template="/org/alfresco/components/form/controls/textfield.ftl" />
+               </field>
+               <field id="cm:description">
+                  <control>
+                     <control-param name="activateLinks">true</control-param>
+                  </control>
+               </field>
+               <field id="mimetype">
+                  <control template="/org/alfresco/components/form/controls/mimetype.ftl" />
+               </field>
+               <field id="size">
+                  <control template="/org/alfresco/components/form/controls/size.ftl" />
+               </field>
+               <field id="cm:taggable">
+                  <control>
+                     <control-param name="compactMode">true</control-param>
+                     <control-param name="params">aspect=cm:taggable</control-param>
+                     <control-param name="createNewItemUri">/api/tag/workspace/SpacesStore</control-param>
+                     <control-param name="createNewItemIcon">tag</control-param>
+                  </control>
+               </field>
+               <field id="cm:categories">
+                  <control>
+                     <control-param name="compactMode">true</control-param>
+                  </control>
+               </field>
+               <field id="cm:originator" read-only="true" />
+               <field id="cm:addressee" read-only="true" />
+               <field id="cm:addressees" read-only="true" />
+               <field id="cm:sentdate" read-only="true" />
+               <field id="cm:subjectline" read-only="true" />
+
+
+          <field id="md:createdFrom" label="Generate from these documents" mandatory="false" read-only="false" />
+            <!--                    <control><control-param name="selectedValueContextProperty">alfresco/site-webscripts/com/airwork/onCreateMergeDocScafold.js</control-param></control>-->
+        </appearance>
+      </form>   
+      </forms>  
+  </config>
+
+
   
   <!-- display the merge docs association aspect data on cm:content items -->
   <config condition="cm:content" evaluator="node-type">
@@ -305,29 +448,457 @@
       </form>
     </forms>
   </config>
-  <!--    <config evaluator="string-compare" condition="DocumentLibrary"><indicators><indicator id="mycompany.indicator.doclib.action.isEmailed"
-                         icon="email-16.png"
-                         index="100"
-                         label="indicators.mycompany.emailed"><evaluator>mycompany.evaluator.doclib.action.isEmailed</evaluator></indicator></indicators></config>-->
-  <!-- example port config used to access remote Alfresco server (default is 8080) -->
-  <!--
-   <config evaluator="string-compare" condition="Remote"><remote><endpoint><id>alfresco-noauth</id><name>Alfresco - unauthenticated access</name><description>Access to Alfresco Repository WebScripts that do not require authentication</description><connector-id>alfresco</connector-id><endpoint-url>http://localhost:8080/alfresco/s</endpoint-url><identity>none</identity></endpoint><endpoint><id>alfresco</id><name>Alfresco - user access</name><description>Access to Alfresco Repository WebScripts that require user authentication</description><connector-id>alfresco</connector-id><endpoint-url>http://localhost:8080/alfresco/s</endpoint-url><identity>user</identity></endpoint><endpoint><id>alfresco-feed</id><name>Alfresco Feed</name><description>Alfresco Feed - supports basic HTTP authentication via the EndPointProxyServlet</description><connector-id>http</connector-id><endpoint-url>http://localhost:8080/alfresco/s</endpoint-url><basic-auth>true</basic-auth><identity>user</identity></endpoint><endpoint><id>activiti-admin</id><name>Activiti Admin UI - user access</name><description>Access to Activiti Admin UI, that requires user authentication</description><connector-id>activiti-admin-connector</connector-id><endpoint-url>http://localhost:8080/alfresco/activiti-admin</endpoint-url><identity>user</identity></endpoint></remote></config>-->
-  <!-- 
-        Overriding endpoints to reference an Alfresco server with external SSO enabled
-        NOTE: If utilising a load balancer between web-tier and repository cluster, the "sticky
-              sessions" feature of your load balancer must be used.
-        NOTE: If alfresco server location is not localhost:8080 then also combine changes from the
-              "example port config" section below.
-        *Optional* keystore contains SSL client certificate + trusted CAs.
-        Used to authenticate share to an external SSO system such as CAS
-        Remove the keystore section if not required i.e. for NTLM.
-        
-        NOTE: For Kerberos SSO rename the "KerberosDisabled" condition above to "Kerberos"
-        
-        NOTE: For external SSO, switch the endpoint connector to "AlfrescoHeader" and set
-              the userHeader to the name of the HTTP header that the external SSO
-              uses to provide the authenticated user name.
-   -->
-  <!--
-   <config evaluator="string-compare" condition="Remote"><remote><keystore><path>alfresco/web-extension/alfresco-system.p12</path><type>pkcs12</type><password>alfresco-system</password></keystore><connector><id>alfrescoCookie</id><name>Alfresco Connector</name><description>Connects to an Alfresco instance using cookie-based authentication</description><class>org.alfresco.web.site.servlet.SlingshotAlfrescoConnector</class></connector><connector><id>alfrescoHeader</id><name>Alfresco Connector</name><description>Connects to an Alfresco instance using header and cookie-based authentication</description><class>org.alfresco.web.site.servlet.SlingshotAlfrescoConnector</class><userHeader>SsoUserHeader</userHeader></connector><endpoint><id>alfresco</id><name>Alfresco - user access</name><description>Access to Alfresco Repository WebScripts that require user authentication</description><connector-id>alfrescoCookie</connector-id><endpoint-url>http://localhost:8080/alfresco/wcs</endpoint-url><identity>user</identity><external-auth>true</external-auth></endpoint></remote></config>-->
+
+  <config condition="aw:contract" evaluator="node-type">
+    <forms>
+      <!-- Default form configuration for the cm:content type -->
+      <form>
+        <field-visibility>
+          <show id="cm:name"/>
+          <show force="true" id="cm:title"/>
+          <show force="true" id="cm:description"/>
+          <show id="mimetype"/>
+          <show force="true" id="cm:author"/>
+          <show for-mode="view" id="size"/>
+          <show for-mode="view" id="cm:creator"/>
+          <show for-mode="view" id="cm:created"/>
+          <show for-mode="view" id="cm:modifier"/>
+          <show for-mode="view" id="cm:modified"/>
+          <!-- tags and categories -->
+          <show for-mode="edit" force="true" id="cm:taggable"/>
+          <show id="cm:categories"/>
+          <!-- cm:dublincore aspect -->
+          <show id="cm:publisher"/>
+          <show id="cm:contributor"/>
+          <show id="cm:type"/>
+          <show id="cm:identifier"/>
+          <show id="cm:dcsource"/>
+          <show id="cm:coverage"/>
+          <show id="cm:rights"/>
+          <show id="cm:subject"/>
+          <!-- cm:complianceable aspect -->
+          <show id="cm:removeAfter"/>
+          <!-- cm:effectivity aspect -->
+          <show id="cm:from"/>
+          <show id="cm:to"/>
+          <!--  cm:summarizable aspect -->
+          <show id="cm:summary"/>
+          <!-- cm:translatable aspect -->
+          <show id="cm:translations"/>
+          <!-- cm:localizable aspect -->
+          <show id="cm:locale"/>
+          <!-- cm:ownable aspect -->
+          <show id="cm:owner"/>
+          <!-- cm:attachable aspect -->
+          <show id="cm:attachments"/>
+          <!-- cm:emailed aspect -->
+          <show id="cm:originator"/>
+          <show id="cm:addressee"/>
+          <show id="cm:addressees"/>
+          <show id="cm:sentdate"/>
+          <show id="cm:subjectline"/>
+          <!-- exif:exif aspect -->
+          <show id="exif:dateTimeOriginal"/>
+          <show id="exif:pixelXDimension"/>
+          <show id="exif:pixelYDimension"/>
+          <show id="exif:exposureTime"/>
+          <show id="exif:fNumber"/>
+          <show id="exif:flash"/>
+          <show id="exif:focalLength"/>
+          <show id="exif:isoSpeedRatings"/>
+          <show id="exif:manufacturer"/>
+          <show id="exif:model"/>
+          <show id="exif:software"/>
+          <show id="exif:orientation"/>
+          <show id="exif:xResolution"/>
+          <show id="exif:yResolution"/>
+          <show id="exif:resolutionUnit"/>
+          <!-- audio:audio aspect -->
+          <show id="audio:album"/>
+          <show id="audio:artist"/>
+          <show id="audio:composer"/>
+          <show id="audio:engineer"/>
+          <show id="audio:genre"/>
+          <show id="audio:trackNumber"/>
+          <show id="audio:releaseDate"/>
+          <show id="audio:sampleRate"/>
+          <show id="audio:sampleType"/>
+          <show id="audio:channelType"/>
+          <show id="audio:compressor"/>
+          <!-- cm:indexControl aspect -->
+          <show id="cm:isIndexed"/>
+          <show id="cm:isContentIndexed"/>
+          <!-- cm:geographic aspect -->
+          <show id="cm:latitude"/>
+          <show id="cm:longitude"/>
+        </field-visibility>
+        <appearance>
+          <field id="cm:name">
+            <control>
+              <control-param name="maxLength">255</control-param>
+            </control>
+          </field>
+          <field id="cm:title">
+            <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+          </field>
+          <field id="cm:description">
+            <control>
+              <control-param name="activateLinks">true</control-param>
+            </control>
+          </field>
+          <field id="mimetype">
+            <control template="/org/alfresco/components/form/controls/mimetype.ftl"/>
+          </field>
+          <field id="size">
+            <control template="/org/alfresco/components/form/controls/size.ftl"/>
+          </field>
+          <field id="cm:taggable">
+            <control>
+              <control-param name="compactMode">true</control-param>
+              <control-param name="params">aspect=cm:taggable</control-param>
+              <control-param name="createNewItemUri">/api/tag/workspace/SpacesStore</control-param>
+              <control-param name="createNewItemIcon">tag</control-param>
+            </control>
+          </field>
+          <field id="cm:categories">
+            <control>
+              <control-param name="compactMode">true</control-param>
+            </control>
+          </field>
+          <field id="cm:originator" read-only="true"/>
+          <field id="cm:addressee" read-only="true"/>
+          <field id="cm:addressees" read-only="true"/>
+          <field id="cm:sentdate" read-only="true"/>
+          <field id="cm:subjectline" read-only="true"/>
+        </appearance>
+      </form>
+      <!-- Document Library pop-up Edit Metadata form -->
+      <form id="doclib-simple-metadata">
+        <field-visibility>
+          <show id="cm:name"/>
+          <show force="true" id="cm:title"/>
+          <show force="true" id="cm:description"/>
+          <!-- tags and categories -->
+          <show for-mode="edit" force="true" id="cm:taggable"/>
+          <show id="cm:categories"/>
+          <show id="aw:contractNumber"/>
+          <show id="aw:contractName"/>
+          <show id="aw:customerName"/>
+          <show id="aw:customerReference"/>
+          <show id="aw:clientFolder"/>
+        </field-visibility>
+        <edit-form template="../documentlibrary/forms/doclib-simple-metadata.ftl"/>
+        <appearance>
+          <set appearance="panel" id="contract" label="Contract Fields"/>
+          <set appearance="panel" id="customer" label="Customer Information"/>
+          <field id="cm:name">
+            <control>
+              <control-param name="maxLength">255</control-param>
+            </control>
+          </field>
+          <field id="cm:title">
+            <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+          </field>
+          <field id="cm:description">
+            <control>
+              <control-param name="activateLinks">true</control-param>
+            </control>
+          </field>
+          <field id="cm:taggable">
+            <control>
+              <control-param name="compactMode">true</control-param>
+              <control-param name="params">aspect=cm:taggable</control-param>
+              <control-param name="createNewItemUri">/api/tag/workspace/SpacesStore</control-param>
+              <control-param name="createNewItemIcon">tag</control-param>
+            </control>
+          </field>
+          <field id="cm:categories">
+            <control>
+              <control-param name="compactMode">true</control-param>
+            </control>
+          </field>
+          <field id="aw:contractNumber" set="contract">
+            <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+          </field>
+          <field id="aw:contractName" set="contract"/>
+          <field id="aw:customerReference" set="customer"/>
+          <field id="aw:customerName" set="customer"/>
+          <field id="aw:clientFolder" set="customer"/>
+        </appearance>
+      </form>
+      <!-- Document Library Inline Edit form -->
+      <form id="doclib-inline-edit">
+        <field-visibility>
+          <show id="cm:name"/>
+          <show force="true" id="cm:title"/>
+          <show force="true" id="cm:description"/>
+          <show force="true" id="cm:content"/>
+        </field-visibility>
+        <appearance>
+          <field id="cm:name">
+            <control>
+              <control-param name="maxLength">255</control-param>
+            </control>
+          </field>
+          <field id="cm:title">
+            <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+          </field>
+          <field id="cm:content">
+            <control>
+              <control-param name="editorAppearance">explorer</control-param>
+              <control-param name="forceEditor">true</control-param>
+            </control>
+          </field>
+        </appearance>
+      </form>
+    </forms>
+    <!-- Document Library config section -->
+  </config>
+  <!-- cm:folder type (existing nodes) -->
+  <config condition="aw:contractfolder" evaluator="node-type">
+    <forms>
+      <!-- Default form configuration for the cm:folder type -->
+      <form>
+        <field-visibility>
+          <show id="cm:name"/>
+          <show force="true" id="cm:title"/>
+          <show force="true" id="cm:description"/>
+          <!-- tags and categories -->
+          <show for-mode="edit" force="true" id="cm:taggable"/>
+          <show id="cm:categories"/>
+          <!-- emailserver:aliasable aspect -->
+          <show id="emailserver:alias"/>
+        </field-visibility>
+        <appearance>
+          <field id="cm:name">
+            <control>
+              <control-param name="maxLength">255</control-param>
+            </control>
+          </field>
+          <field id="cm:title">
+            <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+          </field>
+          <field id="cm:description">
+            <control>
+              <control-param name="activateLinks">true</control-param>
+            </control>
+          </field>
+          <field id="cm:taggable">
+            <control>
+              <control-param name="compactMode">true</control-param>
+              <control-param name="params">aspect=cm:taggable</control-param>
+              <control-param name="createNewItemUri">/api/tag/workspace/SpacesStore</control-param>
+              <control-param name="createNewItemIcon">tag</control-param>
+            </control>
+          </field>
+          <field id="cm:categories">
+            <control>
+              <control-param name="compactMode">true</control-param>
+            </control>
+          </field>
+        </appearance>
+      </form>
+      <!-- Document Library pop-up Edit Metadata form -->
+      <form id="doclib-simple-metadata">
+        <field-visibility>
+          <show id="cm:name"/>
+          <show force="true" id="cm:title"/>
+          <show force="true" id="cm:description"/>
+          <!-- tags and categories -->
+          <show for-mode="edit" force="true" id="cm:taggable"/>
+          <show id="cm:categories"/>
+          <show id="aw:contractNumber"/>
+          <show id="aw:contractName"/>
+          <show id="aw:customerName"/>
+          <show id="aw:customerReference"/>
+          <show id="aw:clientFolder"/>
+        </field-visibility>
+        <edit-form template="../documentlibrary/forms/doclib-simple-metadata.ftl"/>
+        <appearance>
+          <set appearance="panel" id="contract" label="Contract Fields"/>
+          <set appearance="panel" id="customer" label="Customer Information"/>
+          <field id="cm:name">
+            <control>
+              <control-param name="maxLength">255</control-param>
+            </control>
+          </field>
+          <field id="cm:title">
+            <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+          </field>
+          <field id="cm:description">
+            <control>
+              <control-param name="activateLinks">true</control-param>
+            </control>
+          </field>
+          <field id="cm:taggable">
+            <control>
+              <control-param name="compactMode">true</control-param>
+              <control-param name="params">aspect=cm:taggable</control-param>
+              <control-param name="createNewItemUri">/api/tag/workspace/SpacesStore</control-param>
+              <control-param name="createNewItemIcon">tag</control-param>
+            </control>
+          </field>
+          <field id="cm:categories">
+            <control>
+              <control-param name="compactMode">true</control-param>
+            </control>
+          </field>
+          <field id="aw:contractNumber" set="contract">
+            <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+          </field>
+          <field id="aw:contractName" set="contract"/>
+          <field id="aw:customerReference" set="customer"/>
+          <field id="aw:customerName" set="customer"/>
+          <field id="aw:clientFolder" set="customer"/>
+        </appearance>
+      </form>
+    </forms>
+  </config>
+  <!-- Contract classification aspect -->
+  <config condition="aw:contractClassification" evaluator="aspect">
+    <forms>
+      <form>
+        <field-visibility>
+          <show id="aw:contractNumber"/>
+          <show id="aw:contractName"/>
+        </field-visibility>
+        <appearance>
+          <set appearance="panel" id="contract" label="Contract Fields"/>
+          <field id="aw:contractNumber" set="contract">
+            <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+          </field>
+          <field id="aw:contractName" set="contract"/>
+        </appearance>
+      </form>
+    </forms>
+  </config>
+  <!-- Customer classification aspect -->
+  <config condition="aw:customerClassification" evaluator="aspect">
+    <forms>
+      <form>
+        <field-visibility>
+          <show id="aw:customerName"/>
+          <show id="aw:customerReference"/>
+          <show id="aw:clientFolder"/>
+        </field-visibility>
+        <appearance>
+          <set appearance="panel" id="customer" label="Customer Information"/>
+          <field id="aw:customerReference" set="customer"/>
+          <field id="aw:customerName" set="customer"/>
+          <field id="aw:clientFolder" set="customer"/>
+        </appearance>
+      </form>
+    </forms>
+  </config>
+  <config condition="AdvancedSearch" evaluator="string-compare" replace="true">
+    <advanced-search>
+      <!-- Forms for the advanced search type list -->
+      <forms>
+        <form descriptionId="search.form.desc.cm_content" labelId="search.form.label.cm_content">cm:content</form>
+        <form descriptionId="search.form.desc.cm_folder" labelId="search.form.label.cm_folder">cm:folder</form>
+        <form descriptionId="search.form.desc.aw_contract" labelId="type.aw_contract">aw:contract</form>
+      </forms>
+    </advanced-search>
+  </config>
+  <!-- Search form -->
+  <!-- sc:whitepaper type (new nodes) -->
+  <config condition="aw:contract" evaluator="model-type">
+    <forms>
+      <form id="search">
+        <field-visibility>
+          <show id="aw:contractNumber"/>
+          <show id="aw:contractName"/>
+
+          <show id="mimetype"/>
+          <show id="cm:modified"/>
+          <show id="cm:modifier"/>
+          <!-- sc:productRelated -->
+
+        </field-visibility>
+        <appearance>
+                   <set appearance="panel" id="contract" label="Contract Fields"/>
+          <field id="aw:contractNumber" set="contract">
+            <control template="/org/alfresco/components/form/controls/textfield.ftl"/>
+          </field>
+          <field id="aw:contractName" set="contract"/>
+
+        </appearance>
+      </form>
+    </forms>
+  </config>
+
+
+
+
+<!-- Custom Data Lists -->
+<!-- dlexample:book type create form config-->
+<config evaluator="model-type" condition="aw:requirement">
+   <forms>
+      <!-- Create book item form -->
+      <form>
+         <field-visibility>
+            <!-- cm:titled aspect -->
+            <show id="dl:itemId" />
+
+            <show id="cm:title" />
+            <show id="cm:description" />
+            <!-- dlexample:book type -->
+            <show id="aw:description" />
+            <show id="aw:priority" />
+          </field-visibility>
+         <create-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+         <appearance>
+            <field id="cm:title" mandatory="true" />
+            <field id="cm:description">
+               <control template="/org/alfresco/components/form/controls/textarea.ftl" />
+            </field>
+         </appearance>
+      </form>
+
+      <!-- Data Grid view -->
+      <form id="datagrid">
+         <field-visibility>
+            <!-- cm:titled aspect -->
+            <show id="dl:itemId" />
+
+            <show id="cm:title" />
+            <show id="cm:description" />
+            <!-- dlexample:book type -->
+            <show id="aw:description" />
+            <show id="aw:priority" />
+         </field-visibility>
+      </form>
+   </forms>
+</config>
+
+<!-- dlexample:task type edit form config-->
+<config evaluator="node-type" condition="aw:requirement">
+   <forms>
+      <!-- Data List pop-up edit form -->
+      <form>
+         <field-visibility>
+            <!-- cm:titled aspect -->
+            <show id="dl:itemId" />
+
+            <show id="cm:title" />
+            <show id="cm:description" />
+            <!-- dlexample:book type -->
+            <show id="aw:description" />
+            <show id="aw:priority" />
+         </field-visibility>
+         <edit-form template="/org/alfresco/components/data-lists/forms/dataitem.ftl" />
+         <appearance>
+            <field id="cm:description">
+               <control template="/org/alfresco/components/form/controls/textarea.ftl" />
+            </field>
+         </appearance>
+      </form>
+   </forms>
+</config>
+
+
+
+
+  
+
 </alfresco-config>
